@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: licitapp
+
+resources:
+  - namespace.yaml
+  - secrets.yaml
+  - configmap.yaml
+  - statefulsets.yaml
+  - api-gateway.yaml
+  - services.yaml
+  - ingress.yaml
+
+commonLabels:
+  app.kubernetes.io/managed-by: kustomize
+  environment: production
+
+images:
+  - name: licitapp/api-gateway
+    newTag: latest
+  - name: licitapp/connectors
+    newTag: latest
+  - name: licitapp/search
+    newTag: latest
+  - name: licitapp/notifications
+    newTag: latest
+  - name: licitapp/frontend
+    newTag: latest

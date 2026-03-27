@@ -1,0 +1,217 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: licitapp_postgres
+    environment:
+      POSTGRES_DB: licitapp_chile
+      POSTGRES_USER: licitapp_user
+      POSTGRES_PASSWORD: dev_password_123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./../../database/schema/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U licitapp_user -d licitapp_chile"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: licitapp_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    container_name: licitapp_elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.http.ssl.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - ELASTIC_PASSWORD=dev_password_123
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200/_cluster/health | grep -q '\"status\":\"green\\|yellow\"'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    container_name: licitapp_kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - xpack.security.enabled=false
+    ports:
+      - "5601:5601"
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    profiles: ["tools"]
+
+  api-gateway:
+    build:
+      context: ./../../
+      dockerfile: ./infrastructure/docker/Dockerfile.api-gateway
+    container_name: licitapp_api_gateway
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: licitapp_chile
+      POSTGRES_USER: licitapp_user
+      POSTGRES_PASSWORD: dev_password_123
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      JWT_SECRET: dev_jwt_secret_change_in_production_256bits
+      CONNECTORS_SERVICE_URL: http://connectors:3001
+      SEARCH_SERVICE_URL: http://search:3002
+      LOG_LEVEL: debug
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./../../services/api-gateway:/app/services/api-gateway
+      - /app/services/api-gateway/node_modules
+    restart: unless-stopped
+
+  connectors:
+    build:
+      context: ./../../
+      dockerfile: ./infrastructure/docker/Dockerfile.connectors
+    container_name: licitapp_connectors
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: development
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: licitapp_chile
+      POSTGRES_USER: licitapp_user
+      POSTGRES_PASSWORD: dev_password_123
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CHILECOMPRA_TICKET: ${CHILECOMPRA_TICKET:-}
+      WHEREX_API_KEY: ${WHEREX_API_KEY:-}
+      WHEREX_API_URL: ${WHEREX_API_URL:-https://api.wherex.cl/v1}
+      LOG_LEVEL: debug
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./../../services/connectors:/app/services/connectors
+      - /app/services/connectors/node_modules
+    restart: unless-stopped
+
+  search:
+    build:
+      context: ./../../
+      dockerfile: ./infrastructure/docker/Dockerfile.search
+    container_name: licitapp_search
+    ports:
+      - "3002:3002"
+    environment:
+      NODE_ENV: development
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      LOG_LEVEL: debug
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    volumes:
+      - ./../../services/search:/app/services/search
+      - /app/services/search/node_modules
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./../../frontend
+      dockerfile: ../infrastructure/docker/Dockerfile.frontend
+    container_name: licitapp_frontend
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_BASE_URL: http://localhost:3000/api/v1
+    depends_on:
+      - api-gateway
+    volumes:
+      - ./../../frontend:/app
+      - /app/node_modules
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    container_name: licitapp_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+      - '--storage.tsdb.retention.time=15d'
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:10.2.2
+    container_name: licitapp_grafana
+    ports:
+      - "3100:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: dev_grafana_123
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-simple-json-datasource
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./../grafana/dashboards:/etc/grafana/provisioning/dashboards
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: licitapp_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./../nginx/nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api-gateway
+      - frontend
+    profiles: ["proxy"]
+
+volumes:
+  postgres_data:
+  redis_data:
+  elasticsearch_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  default:
+    name: licitapp_network

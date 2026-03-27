@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: licitapp
+  labels:
+    app.kubernetes.io/managed-by: kubectl
+    environment: production
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: licitapp-quota
+  namespace: licitapp
+spec:
+  hard:
+    requests.cpu: "10"
+    requests.memory: 20Gi
+    limits.cpu: "20"
+    limits.memory: 40Gi
+    pods: "50"
+    services: "20"
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: licitapp-limits
+  namespace: licitapp
+spec:
+  limits:
+    - default:
+        cpu: 500m
+        memory: 512Mi
+      defaultRequest:
+        cpu: 100m
+        memory: 128Mi
+      type: Container

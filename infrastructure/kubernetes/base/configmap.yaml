@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: licitapp-config
+  namespace: licitapp
+data:
+  NODE_ENV: "production"
+  LOG_LEVEL: "warn"
+  POSTGRES_HOST: "postgres-service"
+  POSTGRES_PORT: "5432"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  ELASTICSEARCH_URL: "http://elasticsearch-service:9200"
+  ELASTICSEARCH_USERNAME: "elastic"
+  CONNECTORS_SERVICE_URL: "http://connectors-service:3001"
+  SEARCH_SERVICE_URL: "http://search-service:3002"
+  NOTIFICATIONS_SERVICE_URL: "http://notifications-service:3003"
+  RATE_LIMIT_WINDOW_MS: "60000"
+  RATE_LIMIT_MAX_REQUESTS: "100"
+  CACHE_TTL: "300"
+  WHEREX_API_URL: "https://api.wherex.cl/v1"

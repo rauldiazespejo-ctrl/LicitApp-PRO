@@ -1,0 +1,26 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package.json tsconfig.base.json ./
+COPY packages/shared ./packages/shared
+COPY services/api-gateway ./services/api-gateway
+RUN yarn install --frozen-lockfile
+RUN cd packages/shared && npx tsc --project tsconfig.json || true
+RUN cd services/api-gateway && npx tsc --project tsconfig.json || npx tsc --skipLibCheck --noEmit false --outDir dist src/index.ts || true
+
+FROM node:20-alpine AS production
+RUN apk add --no-cache wget
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/packages/shared ./packages/shared
+COPY --from=builder /app/services/api-gateway ./services/api-gateway
+COPY --from=builder /app/tsconfig.base.json ./
+RUN mkdir -p /app/node_modules/@licitaciones && ln -s /app/packages/shared /app/node_modules/@licitaciones/shared
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
+    chown -R appuser:appgroup /app
+USER appuser
+EXPOSE 3000
+HEALTHCHECK --interval=30s --timeout=10s --start-period=90s --retries=3 \
+  CMD wget -qO- http://localhost:3000/health || exit 1
+ENV TS_NODE_PROJECT="/app/services/api-gateway/tsconfig.json"
+CMD ["node", "--require", "/app/node_modules/ts-node/register/transpile-only", "services/api-gateway/src/index.ts"]

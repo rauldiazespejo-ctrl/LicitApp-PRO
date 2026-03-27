@@ -1,0 +1,42 @@
+{
+  "name": "connectors",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@licitapp/shared": "*",
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "axios-retry": "^4.0.0",
+    "cheerio": "^1.0.0-rc.12",
+    "playwright": "^1.40.0",
+    "bullmq": "^5.1.0",
+    "ioredis": "^5.3.2",
+    "knex": "^3.1.0",
+    "pg": "^8.11.3",
+    "winston": "^3.11.0",
+    "dotenv": "^16.3.1",
+    "uuid": "^9.0.0",
+    "node-cron": "^3.0.3",
+    "p-limit": "^5.0.0",
+    "p-retry": "^6.2.0",
+    "bottleneck": "^2.19.5",
+    "prom-client": "^15.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/uuid": "^9.0.7",
+    "@types/node-cron": "^3.0.11",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "ts-node-dev": "^2.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "@types/jest": "^29.5.10"
+  }
+}
