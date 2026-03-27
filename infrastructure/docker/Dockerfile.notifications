@@ -4,6 +4,7 @@ COPY package.json tsconfig.base.json ./
 COPY packages/shared ./packages/shared
 COPY services/notifications ./services/notifications
 RUN yarn install --frozen-lockfile
+RUN cd packages/shared && npx tsc --project tsconfig.json || true
 
 FROM node:20-alpine AS production
 RUN apk add --no-cache wget

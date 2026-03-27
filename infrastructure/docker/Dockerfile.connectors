@@ -4,6 +4,7 @@ COPY package.json tsconfig.base.json ./
 COPY packages/shared ./packages/shared
 COPY services/connectors ./services/connectors
 RUN yarn install --frozen-lockfile
+RUN cd packages/shared && npx tsc --project tsconfig.json || true
 RUN apk add --no-cache chromium nss freetype harfbuzz ca-certificates ttf-freefont
 
 FROM node:20-alpine AS production
