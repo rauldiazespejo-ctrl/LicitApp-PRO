@@ -1,0 +1,32 @@
+[build]
+builder = "dockerfile"
+
+[[services]]
+name = "api-gateway"
+dockerfilePath = "infrastructure/docker/Dockerfile.api-gateway"
+buildContext = "."
+startCommand = "node --require /app/node_modules/ts-node/register/transpile-only services/api-gateway/src/index.ts"
+
+[[services]]
+name = "connectors"
+dockerfilePath = "infrastructure/docker/Dockerfile.connectors"
+buildContext = "."
+startCommand = "node --require /app/node_modules/ts-node/register/transpile-only services/connectors/src/index.ts"
+
+[[services]]
+name = "search"
+dockerfilePath = "infrastructure/docker/Dockerfile.search"
+buildContext = "."
+startCommand = "node --require /app/node_modules/ts-node/register/transpile-only services/search/src/index.ts"
+
+[[services]]
+name = "notifications"
+dockerfilePath = "infrastructure/docker/Dockerfile.notifications"
+buildContext = "."
+startCommand = "node --require /app/node_modules/ts-node/register/transpile-only services/notifications/src/index.ts"
+
+[[services]]
+name = "export"
+dockerfilePath = "infrastructure/docker/Dockerfile.export"
+buildContext = "."
+startCommand = "node --require /app/node_modules/ts-node/register/transpile-only services/export/src/index.ts"
