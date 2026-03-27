@@ -4,7 +4,7 @@ COPY package.json tsconfig.base.json ./
 COPY packages/shared ./packages/shared
 COPY services/search ./services/search
 RUN yarn install --frozen-lockfile
-RUN cd packages/shared && npx tsc --project tsconfig.json || true
+RUN node_modules/.bin/tsc -p packages/shared/tsconfig.json --skipLibCheck
 
 FROM node:20-alpine AS production
 RUN apk add --no-cache wget
