@@ -4,7 +4,7 @@ COPY package.json tsconfig.base.json ./
 COPY packages/shared ./packages/shared
 COPY services/export ./services/export
 RUN yarn install --frozen-lockfile
-RUN yarn workspace @licitaciones/shared build
+RUN yarn workspace @licitapp/shared build
 RUN yarn workspace export build 2>/dev/null || true
 
 FROM node:20-alpine AS production

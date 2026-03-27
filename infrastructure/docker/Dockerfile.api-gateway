@@ -15,7 +15,7 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/packages/shared ./packages/shared
 COPY --from=builder /app/services/api-gateway ./services/api-gateway
 COPY --from=builder /app/tsconfig.base.json ./
-RUN mkdir -p /app/node_modules/@licitaciones && ln -s /app/packages/shared /app/node_modules/@licitaciones/shared
+RUN mkdir -p /app/node_modules/@licitapp && ln -s /app/packages/shared /app/node_modules/@licitapp/shared
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
     chown -R appuser:appgroup /app
 USER appuser

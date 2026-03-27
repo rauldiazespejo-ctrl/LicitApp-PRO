@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: licitapp_user
       POSTGRES_PASSWORD: dev_password_123
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./../../database/schema/init.sql:/docker-entrypoint-initdb.d/01-init.sql
@@ -23,7 +23,7 @@ services:
     image: redis:7-alpine
     container_name: licitapp_redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
     volumes:
       - redis_data:/data
     command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
@@ -83,6 +83,7 @@ services:
       REDIS_PORT: 6379
       ELASTICSEARCH_URL: http://elasticsearch:9200
       JWT_SECRET: dev_jwt_secret_change_in_production_256bits
+      ENCRYPTION_KEY: dev_encryption_key_for_licitapp_dev_32ch
       CONNECTORS_SERVICE_URL: http://connectors:3001
       SEARCH_SERVICE_URL: http://search:3002
       LOG_LEVEL: debug
@@ -146,19 +147,21 @@ services:
     restart: unless-stopped
 
   frontend:
-    build:
-      context: ./../../frontend
-      dockerfile: ../infrastructure/docker/Dockerfile.frontend
+    image: node:20-alpine
     container_name: licitapp_frontend
+    working_dir: /workspace
     ports:
       - "5173:5173"
     environment:
       VITE_API_BASE_URL: http://localhost:3000/api/v1
+      VITE_API_TARGET: http://api-gateway:3000
     depends_on:
       - api-gateway
     volumes:
-      - ./../../frontend:/app
-      - /app/node_modules
+      - ./../../:/workspace
+      - frontend_node_modules:/workspace/frontend/node_modules
+      - workspace_node_modules:/workspace/node_modules
+    command: sh -c "yarn install && yarn workspace frontend dev --host 0.0.0.0"
     restart: unless-stopped
 
   prometheus:
@@ -211,6 +214,8 @@ volumes:
   elasticsearch_data:
   prometheus_data:
   grafana_data:
+  frontend_node_modules:
+  workspace_node_modules:
 
 networks:
   default:
