@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { Toaster } from 'sonner';
 import { useAuthStore } from '@/stores/authStore';
 import Layout from '@/components/dashboard/Layout';
@@ -9,6 +10,7 @@ import TenderDetailPage from '@/pages/TenderDetailPage';
 import ConnectorsPage from '@/pages/ConnectorsPage';
 import AlertsPage from '@/pages/AlertsPage';
 import ProfilePage from '@/pages/ProfilePage';
+import SplashScreen from '@/components/ui/SplashScreen';
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -16,6 +18,17 @@ function PrivateRoute({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) return <SplashScreen />;
+
   return (
     <BrowserRouter>
       <Routes>
