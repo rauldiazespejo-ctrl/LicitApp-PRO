@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es" data-theme="dark">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LicitaChile — Portal Unificado</title>
+<title>LicitaChile â€” Portal Unificado</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
@@ -141,20 +141,20 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
 
 <!-- NAV TABS -->
 <div class="nav-tabs">
-  <button class="tab-btn active" id="tab-login" onclick="show('login')">⬡ Login</button>
-  <button class="tab-btn" id="tab-portals" onclick="show('portals')">🔌 Conectar Portales</button>
-  <button class="tab-btn" id="tab-dashboard" onclick="show('dashboard')">◈ Dashboard</button>
-  <button class="tab-btn" id="tab-tenders" onclick="show('tenders')">⊞ licitapp</button>
-  <button class="tab-btn" id="tab-analytics" onclick="show('analytics')">◎ Analytics</button>
-  <button class="tab-btn" id="tab-detail" onclick="show('detail')">⊙ Detalle</button>
-  <button class="tab-btn" id="tab-alerts" onclick="show('alerts')">⌾ Alertas</button>
+  <button class="tab-btn active" id="tab-login" onclick="show('login')">â¬¡ Login</button>
+  <button class="tab-btn" id="tab-portals" onclick="show('portals')">ðŸ”Œ Conectar Portales</button>
+  <button class="tab-btn" id="tab-dashboard" onclick="show('dashboard')">â—ˆ Dashboard</button>
+  <button class="tab-btn" id="tab-tenders" onclick="show('tenders')">âŠž licitapp</button>
+  <button class="tab-btn" id="tab-analytics" onclick="show('analytics')">â—Ž Analytics</button>
+  <button class="tab-btn" id="tab-detail" onclick="show('detail')">âŠ™ Detalle</button>
+  <button class="tab-btn" id="tab-alerts" onclick="show('alerts')">âŒ¾ Alertas</button>
   <div style="margin-left:auto;display:flex;align-items:center;padding:0 12px;gap:10px">
     <span style="font-size:11px;color:var(--text3)">Tema</span>
-    <button onclick="toggleTheme()" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2);padding:4px 10px;border-radius:7px;font-size:11px;cursor:pointer">☀/☾</button>
+    <button onclick="toggleTheme()" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2);padding:4px 10px;border-radius:7px;font-size:11px;cursor:pointer">â˜€/â˜¾</button>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════ PORTAL CONNECTIONS ══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• PORTAL CONNECTIONS â•â• -->
 <div id="view-portals" class="hidden flex-layout">
   <!-- Sidebar -->
   <div class="sidebar">
@@ -162,7 +162,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <div style="width:34px;height:34px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5"/></svg>
       </div>
-      <div><div style="font-size:13px;font-weight:700">LicitaChile</div><div style="font-size:10px;color:var(--text3)">v2.4.1 · Pro</div></div>
+      <div><div style="font-size:13px;font-weight:700">LicitaChile</div><div style="font-size:10px;color:var(--text3)">v2.4.1 Â· Pro</div></div>
     </div>
     <nav style="flex:1;padding:12px 0;overflow-y:auto">
       <div style="padding:4px 14px 8px;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px">Principal</div>
@@ -170,14 +170,14 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <a onclick="show('tenders')" class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg> licitapp</a>
       <a onclick="show('analytics')" class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg> Analytics</a>
       <a onclick="show('alerts')" class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg> Alertas <span style="margin-left:auto;background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px">3</span></a>
-      <div style="padding:12px 14px 6px;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:6px">Integración</div>
+      <div style="padding:12px 14px 6px;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-top:6px">IntegraciÃ³n</div>
       <a onclick="show('portals')" class="nav-item active"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Portales SSO</a>
-      <a class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M20 12h-2M17.66 17.66l-1.41-1.41M12 20v-2M6.34 17.66l1.41-1.41M4 12H2M6.34 6.34L7.75 7.75"/></svg> Sincronización</a>
+      <a class="nav-item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M20 12h-2M17.66 17.66l-1.41-1.41M12 20v-2M6.34 17.66l1.41-1.41M4 12H2M6.34 6.34L7.75 7.75"/></svg> SincronizaciÃ³n</a>
     </nav>
     <div style="padding:10px 12px;border-top:1px solid var(--border)">
       <div style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--glass);border-radius:10px">
         <div style="width:32px;height:32px;background:linear-gradient(135deg,#6366f1,#a78bfa);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">MG</div>
-        <div style="flex:1;overflow:hidden"><div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">María González</div><div style="font-size:10px;color:var(--text3)">Admin · Pro</div></div>
+        <div style="flex:1;overflow:hidden"><div style="font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">MarÃ­a GonzÃ¡lez</div><div style="font-size:10px;color:var(--text3)">Admin Â· Pro</div></div>
         <button onclick="show('login')" style="background:none;border:none;color:var(--text3);cursor:pointer;padding:4px">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 16l4-4m0 0l-4-4m4 4H7"/></svg>
         </button>
@@ -189,7 +189,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
     <div style="max-width:1000px;margin:0 auto">
       <div style="margin-bottom:28px">
         <h1 style="font-size:22px;font-weight:800;margin:0 0 6px">Conectar Portales</h1>
-        <p style="color:var(--text2);font-size:13px;margin:0">Autentica una sola vez en cada portal. LicitaChile sincronizará automáticamente y mantendrá la sesión activa.</p>
+        <p style="color:var(--text2);font-size:13px;margin:0">Autentica una sola vez en cada portal. LicitaChile sincronizarÃ¡ automÃ¡ticamente y mantendrÃ¡ la sesiÃ³n activa.</p>
       </div>
       <!-- Status bar -->
       <div class="glass" style="border-radius:14px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:20px">
@@ -200,8 +200,8 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
         <div style="height:4px;flex:1;background:var(--border);border-radius:99px;overflow:hidden">
           <div style="width:83%;height:100%;background:linear-gradient(90deg,#10b981,#34d399);border-radius:99px"></div>
         </div>
-        <span style="font-size:12px;color:var(--text2)">Último sync: hace 3 min</span>
-        <button class="btn btn-primary" style="padding:7px 16px;font-size:12px">⟳ Sync ahora</button>
+        <span style="font-size:12px;color:var(--text2)">Ãšltimo sync: hace 3 min</span>
+        <button class="btn btn-primary" style="padding:7px 16px;font-size:12px">âŸ³ Sync ahora</button>
       </div>
       <!-- Portal grid -->
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
@@ -211,7 +211,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
           <div class="connector-glow"></div>
           <div style="display:flex;align-items:center;justify-content:between;margin-bottom:14px">
             <div style="display:flex;align-items:center;gap:10px;flex:1">
-              <div style="width:42px;height:42px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">🏛️</div>
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">ðŸ›ï¸</div>
               <div><div style="font-size:14px;font-weight:700">ChileCompra</div><div style="font-size:11px;color:var(--text3)">mercadopublico.cl</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)">
@@ -233,12 +233,12 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
             </div>
             <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center">
               <div style="font-size:18px;font-weight:800">8m</div>
-              <div style="font-size:10px;color:var(--text3)">Último sync</div>
+              <div style="font-size:10px;color:var(--text3)">Ãšltimo sync</div>
             </div>
           </div>
           <div style="display:flex;gap:8px">
-            <button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">⚙ Configurar</button>
-            <button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">⊗ Desconectar</button>
+            <button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">âš™ Configurar</button>
+            <button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">âŠ— Desconectar</button>
           </div>
         </div>
 
@@ -247,8 +247,8 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
           <div class="connector-glow"></div>
           <div style="display:flex;align-items:center;margin-bottom:14px">
             <div style="display:flex;align-items:center;gap:10px;flex:1">
-              <div style="width:42px;height:42px;background:linear-gradient(135deg,#7c3aed,#8b5cf6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">🔷</div>
-              <div><div style="font-size:14px;font-weight:700">Wherex</div><div style="font-size:11px;color:var(--text3)">wherex.cl · API REST</div></div>
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,#7c3aed,#8b5cf6);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">ðŸ”·</div>
+              <div><div style="font-size:14px;font-weight:700">Wherex</div><div style="font-size:11px;color:var(--text3)">wherex.cl Â· API REST</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)">
               <div style="width:6px;height:6px;border-radius:50%;background:#10b981" class="pulse"></div>
@@ -256,23 +256,23 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
             </div>
           </div>
           <div style="background:var(--glass);border-radius:10px;padding:12px;margin-bottom:12px">
-            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:6px"><span>Autenticación</span><span style="color:#a78bfa">API Key</span></div>
-            <div style="font-size:12px;font-weight:600">lck_prod_•••••••••••xyz8</div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:6px"><span>AutenticaciÃ³n</span><span style="color:#a78bfa">API Key</span></div>
+            <div style="font-size:12px;font-weight:600">lck_prod_â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢xyz8</div>
             <div style="font-size:11px;color:var(--text3);margin-top:2px">Rate limit: 847/1000 req/h</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
             <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800" class="grad-green">6,832</div><div style="font-size:10px;color:var(--text3)">licitapp</div></div>
-            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800">42m</div><div style="font-size:10px;color:var(--text3)">Último sync</div></div>
+            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800">42m</div><div style="font-size:10px;color:var(--text3)">Ãšltimo sync</div></div>
           </div>
-          <div style="display:flex;gap:8px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">⚙ Configurar</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">⊗ Desconectar</button></div>
+          <div style="display:flex;gap:8px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">âš™ Configurar</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">âŠ— Desconectar</button></div>
         </div>
 
-        <!-- SAP Ariba — ERROR -->
+        <!-- SAP Ariba â€” ERROR -->
         <div class="portal-card error">
           <div style="display:flex;align-items:center;margin-bottom:14px">
             <div style="display:flex;align-items:center;gap:10px;flex:1">
-              <div style="width:42px;height:42px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">💼</div>
-              <div><div style="font-size:14px;font-weight:700">SAP Ariba</div><div style="font-size:11px;color:var(--text3)">api.ariba.com · OAuth</div></div>
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">ðŸ’¼</div>
+              <div><div style="font-size:14px;font-weight:700">SAP Ariba</div><div style="font-size:11px;color:var(--text3)">api.ariba.com Â· OAuth</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(239,68,68,0.15);border-radius:99px;border:1px solid rgba(239,68,68,0.3)">
               <div style="width:6px;height:6px;border-radius:50%;background:#ef4444"></div>
@@ -280,11 +280,11 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
             </div>
           </div>
           <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px;margin-bottom:12px">
-            <div style="font-size:11px;color:#fca5a5;font-weight:600;margin-bottom:4px">⚠ Token expirado — Requiere reautenticación</div>
-            <div style="font-size:11px;color:var(--text3)">5 fallos consecutivos · Reset en 52s</div>
+            <div style="font-size:11px;color:#fca5a5;font-weight:600;margin-bottom:4px">âš  Token expirado â€” Requiere reautenticaciÃ³n</div>
+            <div style="font-size:11px;color:var(--text3)">5 fallos consecutivos Â· Reset en 52s</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
-            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#f87171">4,210</div><div style="font-size:10px;color:var(--text3)">Última sync</div></div>
+            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#f87171">4,210</div><div style="font-size:10px;color:var(--text3)">Ãšltima sync</div></div>
             <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800;color:#f87171">3h</div><div style="font-size:10px;color:var(--text3)">Sin datos</div></div>
           </div>
           <button onclick="openSSOModal('SAP Ariba','sap')" class="btn btn-primary" style="width:100%;font-size:12px;padding:9px">
@@ -298,8 +298,8 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
           <div class="connector-glow"></div>
           <div style="display:flex;align-items:center;margin-bottom:14px">
             <div style="display:flex;align-items:center;gap:10px;flex:1">
-              <div style="width:42px;height:42px;background:linear-gradient(135deg,#065f46,#10b981);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">🇨🇱</div>
-              <div><div style="font-size:14px;font-weight:700">SICEP</div><div style="font-size:11px;color:var(--text3)">sicep.cl · Scraping + API</div></div>
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,#065f46,#10b981);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">ðŸ‡¨ðŸ‡±</div>
+              <div><div style="font-size:14px;font-weight:700">SICEP</div><div style="font-size:11px;color:var(--text3)">sicep.cl Â· Scraping + API</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)">
               <div style="width:6px;height:6px;border-radius:50%;background:#10b981" class="pulse"></div>
@@ -307,15 +307,15 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
             </div>
           </div>
           <div style="background:var(--glass);border-radius:10px;padding:12px;margin-bottom:12px">
-            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:6px"><span>Método</span><span style="color:#34d399">Sesión Web</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text2);margin-bottom:6px"><span>MÃ©todo</span><span style="color:#34d399">SesiÃ³n Web</span></div>
             <div style="font-size:12px;font-weight:600">sicep_admin@hacienda.cl</div>
-            <div style="font-size:11px;color:var(--text3);margin-top:2px">Sesión activa · Cookie válida</div>
+            <div style="font-size:11px;color:var(--text3);margin-top:2px">SesiÃ³n activa Â· Cookie vÃ¡lida</div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
             <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800" class="grad-green">3,198</div><div style="font-size:10px;color:var(--text3)">licitapp</div></div>
-            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800">18m</div><div style="font-size:10px;color:var(--text3)">Último sync</div></div>
+            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800">18m</div><div style="font-size:10px;color:var(--text3)">Ãšltimo sync</div></div>
           </div>
-          <div style="display:flex;gap:8px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">⚙ Configurar</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">⊗ Desconectar</button></div>
+          <div style="display:flex;gap:8px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">âš™ Configurar</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">âŠ— Desconectar</button></div>
         </div>
 
         <!-- Coupa -->
@@ -323,8 +323,8 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
           <div class="connector-glow"></div>
           <div style="display:flex;align-items:center;margin-bottom:14px">
             <div style="display:flex;align-items:center;gap:10px;flex:1">
-              <div style="width:42px;height:42px;background:linear-gradient(135deg,#b91c1c,#ef4444);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">🔴</div>
-              <div><div style="font-size:14px;font-weight:700">Coupa</div><div style="font-size:11px;color:var(--text3)">coupa.com · REST API</div></div>
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,#b91c1c,#ef4444);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">ðŸ”´</div>
+              <div><div style="font-size:14px;font-weight:700">Coupa</div><div style="font-size:11px;color:var(--text3)">coupa.com Â· REST API</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)">
               <div style="width:6px;height:6px;border-radius:50%;background:#10b981" class="pulse"></div>
@@ -338,16 +338,16 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">
             <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800" class="grad-green">1,580</div><div style="font-size:10px;color:var(--text3)">licitapp</div></div>
-            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800">55m</div><div style="font-size:10px;color:var(--text3)">Último sync</div></div>
+            <div style="background:var(--glass);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px;font-weight:800">55m</div><div style="font-size:10px;color:var(--text3)">Ãšltimo sync</div></div>
           </div>
-          <div style="display:flex;gap:8px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">⚙ Configurar</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">⊗ Desconectar</button></div>
+          <div style="display:flex;gap:8px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:7px">âš™ Configurar</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:7px">âŠ— Desconectar</button></div>
         </div>
 
-        <!-- Portal Minero — NOT connected -->
+        <!-- Portal Minero â€” NOT connected -->
         <div class="portal-card" style="border-style:dashed">
           <div style="display:flex;align-items:center;margin-bottom:14px">
             <div style="display:flex;align-items:center;gap:10px;flex:1">
-              <div style="width:42px;height:42px;background:linear-gradient(135deg,#374151,#6b7280);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">⛏️</div>
+              <div style="width:42px;height:42px;background:linear-gradient(135deg,#374151,#6b7280);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px">â›ï¸</div>
               <div><div style="font-size:14px;font-weight:700">Portal Minero</div><div style="font-size:11px;color:var(--text3)">portalminero.com</div></div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;padding:4px 10px;background:var(--glass);border-radius:99px;border:1px solid var(--border2)">
@@ -370,17 +370,17 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <!-- Sync log -->
       <div class="glass" style="border-radius:14px;padding:20px;margin-top:24px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
-          <h3 style="margin:0;font-size:14px;font-weight:700">Log de Sincronización en Tiempo Real</h3>
+          <h3 style="margin:0;font-size:14px;font-weight:700">Log de SincronizaciÃ³n en Tiempo Real</h3>
           <div style="display:flex;align-items:center;gap:6px"><div style="width:7px;height:7px;border-radius:50%;background:#10b981" class="pulse"></div><span style="font-size:11px;color:var(--green)">Live</span></div>
         </div>
         <div style="background:rgba(0,0,0,0.3);border-radius:10px;padding:12px;font-family:monospace;font-size:11px;line-height:1.8;max-height:160px;overflow-y:auto" id="sync-log">
-          <div><span style="color:#34d399">[09:14:22]</span> <span style="color:#a78bfa">CHILECOMPRA</span> ✓ Sync delta completado · +847 nuevas · 12 actualizadas · 3 deduplicadas</div>
-          <div><span style="color:#34d399">[09:14:18]</span> <span style="color:#818cf8">DEDUP</span> ✓ Fingerprint match: LP-2024-889921 ↔ SICEP-77821 (similarity: 0.94)</div>
-          <div><span style="color:#34d399">[09:13:55]</span> <span style="color:#c084fc">WHEREX</span> ✓ Sync incremental · +124 nuevas · UNSPSC clasificadas: 4300(41), 7200(38), 9100(45)</div>
-          <div><span style="color:#fbbf24">[09:13:30]</span> <span style="color:#fca5a5">SAP ARIBA</span> ⚠ Circuit OPEN · Token expirado · Requiere reauth · Retry en 52s</div>
-          <div><span style="color:#34d399">[09:12:48]</span> <span style="color:#6ee7b7">SICEP</span> ✓ Sync delta · +208 nuevas · Cache ES invalidado (847 keys)</div>
-          <div><span style="color:#34d399">[09:12:15]</span> <span style="color:#fda4af">COUPA</span> ✓ Sync completado · tenant-empresa-prod-cl · +67 licitapp</div>
-          <div><span style="color:#94a3b8">[09:11:00]</span> <span style="color:#94a3b8">SEARCH</span> Redis cache · hit rate 94.2% · avg latency 11ms (vs 187ms ES)</div>
+          <div><span style="color:#34d399">[09:14:22]</span> <span style="color:#a78bfa">CHILECOMPRA</span> âœ“ Sync delta completado Â· +847 nuevas Â· 12 actualizadas Â· 3 deduplicadas</div>
+          <div><span style="color:#34d399">[09:14:18]</span> <span style="color:#818cf8">DEDUP</span> âœ“ Fingerprint match: LP-2024-889921 â†” SICEP-77821 (similarity: 0.94)</div>
+          <div><span style="color:#34d399">[09:13:55]</span> <span style="color:#c084fc">WHEREX</span> âœ“ Sync incremental Â· +124 nuevas Â· UNSPSC clasificadas: 4300(41), 7200(38), 9100(45)</div>
+          <div><span style="color:#fbbf24">[09:13:30]</span> <span style="color:#fca5a5">SAP ARIBA</span> âš  Circuit OPEN Â· Token expirado Â· Requiere reauth Â· Retry en 52s</div>
+          <div><span style="color:#34d399">[09:12:48]</span> <span style="color:#6ee7b7">SICEP</span> âœ“ Sync delta Â· +208 nuevas Â· Cache ES invalidado (847 keys)</div>
+          <div><span style="color:#34d399">[09:12:15]</span> <span style="color:#fda4af">COUPA</span> âœ“ Sync completado Â· tenant-empresa-prod-cl Â· +67 licitapp</div>
+          <div><span style="color:#94a3b8">[09:11:00]</span> <span style="color:#94a3b8">SEARCH</span> Redis cache Â· hit rate 94.2% Â· avg latency 11ms (vs 187ms ES)</div>
         </div>
       </div>
     </div>
@@ -390,39 +390,39 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
 <!-- SSO MODAL -->
 <div id="sso-modal" class="hidden" style="position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.7);backdrop-filter:blur(8px)">
   <div class="glass2" style="border-radius:20px;padding:32px;width:400px;position:relative">
-    <button onclick="closeSSOModal()" style="position:absolute;top:14px;right:14px;background:var(--glass);border:1px solid var(--border2);border-radius:8px;padding:4px 8px;color:var(--text2);cursor:pointer;font-size:18px;line-height:1">×</button>
+    <button onclick="closeSSOModal()" style="position:absolute;top:14px;right:14px;background:var(--glass);border:1px solid var(--border2);border-radius:8px;padding:4px 8px;color:var(--text2);cursor:pointer;font-size:18px;line-height:1">Ã—</button>
     <div id="sso-step1">
       <div style="text-align:center;margin-bottom:24px">
-        <div id="sso-icon" style="font-size:40px;margin-bottom:10px">💼</div>
+        <div id="sso-icon" style="font-size:40px;margin-bottom:10px">ðŸ’¼</div>
         <h2 id="sso-title" style="margin:0 0 6px;font-size:18px;font-weight:800">Conectar SAP Ariba</h2>
-        <p style="color:var(--text2);font-size:13px;margin:0">Inicia sesión una sola vez. LicitaChile mantendrá la autenticación activa automáticamente.</p>
+        <p style="color:var(--text2);font-size:13px;margin:0">Inicia sesiÃ³n una sola vez. LicitaChile mantendrÃ¡ la autenticaciÃ³n activa automÃ¡ticamente.</p>
       </div>
       <div style="margin-bottom:14px"><label style="font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:7px">Email / Username</label><input class="inp" type="email" placeholder="tu@empresa.com" id="sso-email"></div>
-      <div style="margin-bottom:20px"><label style="font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:7px">Contraseña del portal</label><input class="inp" type="password" placeholder="••••••••" id="sso-pass"></div>
+      <div style="margin-bottom:20px"><label style="font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.8px;display:block;margin-bottom:7px">ContraseÃ±a del portal</label><input class="inp" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" id="sso-pass"></div>
       <button onclick="ssoConnect()" class="btn btn-primary" style="width:100%;padding:12px;font-size:14px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10,17 15,12 10,7"/></svg>
         Autenticar y conectar
       </button>
-      <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:12px">🔒 Credenciales cifradas con AES-256-GCM · Solo tú puedes ver tus datos</p>
+      <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:12px">ðŸ”’ Credenciales cifradas con AES-256-GCM Â· Solo tÃº puedes ver tus datos</p>
     </div>
     <div id="sso-step2" class="hidden" style="text-align:center;padding:20px 0">
       <div style="width:60px;height:60px;border:3px solid var(--accent);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px"></div>
       <p style="font-size:15px;font-weight:600;margin:0 0 8px">Autenticando...</p>
-      <p style="font-size:12px;color:var(--text2);margin:0" id="sso-status">Estableciendo conexión segura</p>
+      <p style="font-size:12px;color:var(--text2);margin:0" id="sso-status">Estableciendo conexiÃ³n segura</p>
     </div>
     <div id="sso-step3" class="hidden" style="text-align:center;padding:20px 0">
       <div style="width:60px;height:60px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid rgba(16,185,129,0.4)">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
       </div>
-      <p style="font-size:16px;font-weight:800;margin:0 0 8px" class="grad-green">¡Conectado exitosamente!</p>
-      <p style="font-size:12px;color:var(--text2);margin:0 0 20px">El portal está sincronizando. Sync inicial en progreso...</p>
+      <p style="font-size:16px;font-weight:800;margin:0 0 8px" class="grad-green">Â¡Conectado exitosamente!</p>
+      <p style="font-size:12px;color:var(--text2);margin:0 0 20px">El portal estÃ¡ sincronizando. Sync inicial en progreso...</p>
       <button onclick="closeSSOModal()" class="btn btn-success" style="padding:10px 28px">Cerrar</button>
     </div>
   </div>
 </div>
 @keyframes spin{to{transform:rotate(360deg)}}
 
-<!-- ══════════════════════════════════════════════════════ LOGIN ══ -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• LOGIN â•â• -->
 <div id="view-login" style="height:calc(100vh - 40px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
   <div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div>
   <div style="width:100%;max-width:420px;padding:16px;position:relative;z-index:1">
@@ -432,7 +432,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
       </div>
       <h1 style="font-size:28px;font-weight:800;margin:0" class="grad">LicitaChile</h1>
-      <p style="color:var(--text2);font-size:13px;margin:6px 0 0">Sistema Unificado de licitapp · 6 portales integrados</p>
+      <p style="color:var(--text2);font-size:13px;margin:6px 0 0">Sistema Unificado de licitapp Â· 6 portales integrados</p>
     </div>
     <!-- Card -->
     <div class="glass2" style="border-radius:20px;padding:32px">
@@ -442,11 +442,11 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       </div>
       <div style="margin-bottom:20px">
         <div style="display:flex;justify-content:space-between;margin-bottom:8px">
-          <label style="font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.8px">Contraseña</label>
-          <a href="#" style="font-size:12px;color:var(--accent2)">¿Olvidaste?</a>
+          <label style="font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.8px">ContraseÃ±a</label>
+          <a href="#" style="font-size:12px;color:var(--accent2)">Â¿Olvidaste?</a>
         </div>
         <div style="position:relative">
-          <input class="inp" type="password" value="••••••••" style="padding-right:40px">
+          <input class="inp" type="password" value="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" style="padding-right:40px">
           <button style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text3);cursor:pointer">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </button>
@@ -454,11 +454,11 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       </div>
       <button onclick="show('portals')" class="btn btn-primary" style="width:100%;padding:13px;font-size:14px;border-radius:12px;margin-bottom:16px">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10,17 15,12 10,7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-        Iniciar sesión
+        Iniciar sesiÃ³n
       </button>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
         <div style="flex:1;height:1px;background:var(--border)"></div>
-        <span style="font-size:12px;color:var(--text3)">o continúa con</span>
+        <span style="font-size:12px;color:var(--text3)">o continÃºa con</span>
         <div style="flex:1;height:1px;background:var(--border)"></div>
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
@@ -472,7 +472,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
         </button>
       </div>
     </div>
-    <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:16px">¿Sin cuenta? <a href="#" style="color:var(--accent2)">Solicitar demo gratuita →</a></p>
+    <p style="text-align:center;font-size:12px;color:var(--text3);margin-top:16px">Â¿Sin cuenta? <a href="#" style="color:var(--accent2)">Solicitar demo gratuita â†’</a></p>
     <!-- Portal logos strip -->
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px;opacity:.4">
       <span style="font-size:10px;color:var(--text3)">INTEGRA</span>
@@ -486,7 +486,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
   </div>
 </div>
 
-<!-- ══ PORTALS ══ -->
+<!-- â•â• PORTALS â•â• -->
 <div id="view-portals" style="display:none;height:calc(100vh - 40px)">
 <div style="display:flex;height:100%">
 <div style="width:220px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0">
@@ -502,11 +502,11 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
     <div style="height:1px;background:var(--border);margin:8px 14px"></div>
     <a onclick="show('portals')" class="nav-item active">&#9632; Portales SSO</a>
   </nav>
-  <div style="padding:10px 12px;border-top:1px solid var(--border)"><div style="display:flex;align-items:center;gap:8px;padding:9px;background:var(--glass);border-radius:10px"><div style="width:30px;height:30px;background:linear-gradient(135deg,#6366f1,#a78bfa);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">MG</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600">María González</div><div style="font-size:10px;color:var(--text3)">Admin Pro</div></div><button onclick="show('login')" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px">&#8594;</button></div></div>
+  <div style="padding:10px 12px;border-top:1px solid var(--border)"><div style="display:flex;align-items:center;gap:8px;padding:9px;background:var(--glass);border-radius:10px"><div style="width:30px;height:30px;background:linear-gradient(135deg,#6366f1,#a78bfa);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">MG</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600">MarÃ­a GonzÃ¡lez</div><div style="font-size:10px;color:var(--text3)">Admin Pro</div></div><button onclick="show('login')" style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:14px">&#8594;</button></div></div>
 </div>
 <div style="flex:1;overflow-y:auto;padding:24px">
   <div style="max-width:960px;margin:0 auto">
-    <div style="margin-bottom:18px"><h1 style="font-size:20px;font-weight:800;margin:0 0 5px">Conectar Portales</h1><p style="color:var(--text2);font-size:13px;margin:0">Autentica una sola vez. LicitaChile mantiene la sesión activa automáticamente.</p></div>
+    <div style="margin-bottom:18px"><h1 style="font-size:20px;font-weight:800;margin:0 0 5px">Conectar Portales</h1><p style="color:var(--text2);font-size:13px;margin:0">Autentica una sola vez. LicitaChile mantiene la sesiÃ³n activa automÃ¡ticamente.</p></div>
     <div class="glass" style="border-radius:12px;padding:13px 17px;margin-bottom:18px;display:flex;align-items:center;gap:14px">
       <div style="display:flex;align-items:center;gap:7px"><div style="width:9px;height:9px;border-radius:50%;background:var(--green)" class="pulse"></div><span style="font-size:13px;font-weight:600">5 de 6 portales activos</span></div>
       <div style="height:4px;flex:1;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:83%;height:100%;background:linear-gradient(90deg,#10b981,#34d399)"></div></div>
@@ -521,20 +521,20 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
         <div style="display:flex;gap:6px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:6px">&#9881; Config</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:6px">Desc.</button></div>
       </div>
       <div class="portal-card connected"><div class="connector-glow"></div>
-        <div style="display:flex;align-items:center;gap:9px;margin-bottom:11px"><div style="width:38px;height:38px;background:linear-gradient(135deg,#7c3aed,#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px">&#128311;</div><div style="flex:1"><div style="font-size:13px;font-weight:700">Wherex</div><div style="font-size:10px;color:var(--text3)">wherex.cl · API REST</div></div><div style="display:flex;align-items:center;gap:4px;padding:3px 8px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)"><div style="width:5px;height:5px;border-radius:50%;background:#10b981" class="pulse"></div><span style="font-size:10px;font-weight:600;color:#34d399">OK</span></div></div>
-        <div style="background:var(--glass);border-radius:9px;padding:10px;margin-bottom:9px;font-size:11px"><div style="display:flex;justify-content:space-between;color:var(--text2);margin-bottom:3px"><span>Auth</span><span style="color:#a78bfa">API Key</span></div><div style="font-weight:600;margin-bottom:1px">lck_prod_•••xyz8</div><div style="color:var(--text3)">Rate: 847/1000 req/h</div></div>
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:11px"><div style="width:38px;height:38px;background:linear-gradient(135deg,#7c3aed,#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px">&#128311;</div><div style="flex:1"><div style="font-size:13px;font-weight:700">Wherex</div><div style="font-size:10px;color:var(--text3)">wherex.cl Â· API REST</div></div><div style="display:flex;align-items:center;gap:4px;padding:3px 8px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)"><div style="width:5px;height:5px;border-radius:50%;background:#10b981" class="pulse"></div><span style="font-size:10px;font-weight:600;color:#34d399">OK</span></div></div>
+        <div style="background:var(--glass);border-radius:9px;padding:10px;margin-bottom:9px;font-size:11px"><div style="display:flex;justify-content:space-between;color:var(--text2);margin-bottom:3px"><span>Auth</span><span style="color:#a78bfa">API Key</span></div><div style="font-weight:600;margin-bottom:1px">lck_prod_â€¢â€¢â€¢xyz8</div><div style="color:var(--text3)">Rate: 847/1000 req/h</div></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px"><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800" class="grad-green">6,832</div><div style="font-size:10px;color:var(--text3)">licitapp</div></div><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800">42m</div><div style="font-size:10px;color:var(--text3)">Sync</div></div></div>
         <div style="display:flex;gap:6px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:6px">&#9881; Config</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:6px">Desc.</button></div>
       </div>
       <div class="portal-card error">
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:11px"><div style="width:38px;height:38px;background:linear-gradient(135deg,#d97706,#f59e0b);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px">&#128188;</div><div style="flex:1"><div style="font-size:13px;font-weight:700">SAP Ariba</div><div style="font-size:10px;color:var(--text3)">api.ariba.com</div></div><div style="display:flex;align-items:center;gap:4px;padding:3px 8px;background:rgba(239,68,68,0.15);border-radius:99px;border:1px solid rgba(239,68,68,0.3)"><div style="width:5px;height:5px;border-radius:50%;background:#ef4444"></div><span style="font-size:10px;font-weight:600;color:#f87171">Circuit Open</span></div></div>
-        <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:9px;padding:10px;margin-bottom:9px;font-size:11px"><div style="color:#fca5a5;font-weight:600;margin-bottom:2px">&#9888; Token expirado</div><div style="color:var(--text3)">5 fallos · Reset en 52s</div></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px"><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800;color:#f87171">4,210</div><div style="font-size:10px;color:var(--text3)">Última sync</div></div><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800;color:#f87171">3h</div><div style="font-size:10px;color:var(--text3)">Sin datos</div></div></div>
+        <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:9px;padding:10px;margin-bottom:9px;font-size:11px"><div style="color:#fca5a5;font-weight:600;margin-bottom:2px">&#9888; Token expirado</div><div style="color:var(--text3)">5 fallos Â· Reset en 52s</div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px"><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800;color:#f87171">4,210</div><div style="font-size:10px;color:var(--text3)">Ãšltima sync</div></div><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800;color:#f87171">3h</div><div style="font-size:10px;color:var(--text3)">Sin datos</div></div></div>
         <button onclick="openSSOModal('SAP Ariba','sap')" class="btn btn-primary" style="width:100%;font-size:12px;padding:8px">Reconectar SSO</button>
       </div>
       <div class="portal-card connected"><div class="connector-glow"></div>
         <div style="display:flex;align-items:center;gap:9px;margin-bottom:11px"><div style="width:38px;height:38px;background:linear-gradient(135deg,#065f46,#10b981);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px">&#127464;&#127473;</div><div style="flex:1"><div style="font-size:13px;font-weight:700">SICEP</div><div style="font-size:10px;color:var(--text3)">sicep.cl</div></div><div style="display:flex;align-items:center;gap:4px;padding:3px 8px;background:rgba(16,185,129,0.15);border-radius:99px;border:1px solid rgba(16,185,129,0.3)"><div style="width:5px;height:5px;border-radius:50%;background:#10b981" class="pulse"></div><span style="font-size:10px;font-weight:600;color:#34d399">OK</span></div></div>
-        <div style="background:var(--glass);border-radius:9px;padding:10px;margin-bottom:9px;font-size:11px"><div style="display:flex;justify-content:space-between;color:var(--text2);margin-bottom:3px"><span>Método</span><span style="color:#34d399">Sesión Web</span></div><div style="font-weight:600;margin-bottom:1px">sicep_admin@hacienda.cl</div><div style="color:var(--text3)">Cookie válida</div></div>
+        <div style="background:var(--glass);border-radius:9px;padding:10px;margin-bottom:9px;font-size:11px"><div style="display:flex;justify-content:space-between;color:var(--text2);margin-bottom:3px"><span>MÃ©todo</span><span style="color:#34d399">SesiÃ³n Web</span></div><div style="font-weight:600;margin-bottom:1px">sicep_admin@hacienda.cl</div><div style="color:var(--text3)">Cookie vÃ¡lida</div></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px"><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800" class="grad-green">3,198</div><div style="font-size:10px;color:var(--text3)">licitapp</div></div><div style="background:var(--glass);border-radius:7px;padding:8px;text-align:center"><div style="font-size:15px;font-weight:800">18m</div><div style="font-size:10px;color:var(--text3)">Sync</div></div></div>
         <div style="display:flex;gap:6px"><button class="btn btn-ghost" style="flex:1;font-size:11px;padding:6px">&#9881; Config</button><button class="btn btn-danger" style="flex:1;font-size:11px;padding:6px">Desc.</button></div>
       </div>
@@ -551,13 +551,13 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       </div>
     </div>
     <div class="glass" style="border-radius:12px;padding:15px;margin-top:18px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><h3 style="margin:0;font-size:13px;font-weight:700">Log de Sincronización</h3><div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#10b981" class="pulse"></div><span style="font-size:11px;color:var(--green)">Live</span></div></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><h3 style="margin:0;font-size:13px;font-weight:700">Log de SincronizaciÃ³n</h3><div style="display:flex;align-items:center;gap:5px"><div style="width:6px;height:6px;border-radius:50%;background:#10b981" class="pulse"></div><span style="font-size:11px;color:var(--green)">Live</span></div></div>
       <div style="background:rgba(0,0,0,0.3);border-radius:9px;padding:10px;font-family:monospace;font-size:11px;line-height:1.7;max-height:120px;overflow-y:auto" id="sync-log">
-        <div><span style="color:#34d399">[09:14:22]</span> <span style="color:#a78bfa">CHILECOMPRA</span> ✓ +847 nuevas · 3 deduplicadas</div>
-        <div><span style="color:#34d399">[09:13:55]</span> <span style="color:#c084fc">WHEREX</span> ✓ +124 nuevas · UNSPSC 4300(41),7200(38)</div>
-        <div><span style="color:#fbbf24">[09:13:30]</span> <span style="color:#fca5a5">SAP ARIBA</span> ⚠ Circuit OPEN · Token expirado</div>
-        <div><span style="color:#34d399">[09:12:48]</span> <span style="color:#6ee7b7">SICEP</span> ✓ +208 nuevas</div>
-        <div><span style="color:#94a3b8">[09:11:00]</span> <span style="color:#94a3b8">REDIS</span> hit rate 94.2% · latency 11ms</div>
+        <div><span style="color:#34d399">[09:14:22]</span> <span style="color:#a78bfa">CHILECOMPRA</span> âœ“ +847 nuevas Â· 3 deduplicadas</div>
+        <div><span style="color:#34d399">[09:13:55]</span> <span style="color:#c084fc">WHEREX</span> âœ“ +124 nuevas Â· UNSPSC 4300(41),7200(38)</div>
+        <div><span style="color:#fbbf24">[09:13:30]</span> <span style="color:#fca5a5">SAP ARIBA</span> âš  Circuit OPEN Â· Token expirado</div>
+        <div><span style="color:#34d399">[09:12:48]</span> <span style="color:#6ee7b7">SICEP</span> âœ“ +208 nuevas</div>
+        <div><span style="color:#94a3b8">[09:11:00]</span> <span style="color:#94a3b8">REDIS</span> hit rate 94.2% Â· latency 11ms</div>
       </div>
     </div>
   </div>
@@ -570,16 +570,16 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
   <div class="glass2" style="border-radius:18px;padding:26px;width:370px;position:relative">
     <button onclick="closeSSOModal()" style="position:absolute;top:11px;right:11px;background:var(--glass);border:1px solid var(--border2);border-radius:7px;padding:2px 8px;color:var(--text2);cursor:pointer;font-size:17px;line-height:1.4">&#215;</button>
     <div id="sso-step1">
-      <div style="text-align:center;margin-bottom:18px"><div id="sso-icon" style="font-size:34px;margin-bottom:8px">&#128188;</div><h2 id="sso-title" style="margin:0 0 5px;font-size:17px;font-weight:800">Conectar SAP Ariba</h2><p style="color:var(--text2);font-size:12px;margin:0">Una sola autenticación. LicitaChile mantiene la sesión activa.</p></div>
+      <div style="text-align:center;margin-bottom:18px"><div id="sso-icon" style="font-size:34px;margin-bottom:8px">&#128188;</div><h2 id="sso-title" style="margin:0 0 5px;font-size:17px;font-weight:800">Conectar SAP Ariba</h2><p style="color:var(--text2);font-size:12px;margin:0">Una sola autenticaciÃ³n. LicitaChile mantiene la sesiÃ³n activa.</p></div>
       <div style="margin-bottom:11px"><label style="font-size:11px;font-weight:600;color:var(--text2);display:block;margin-bottom:5px">Email / Usuario</label><input class="inp" type="email" placeholder="tu@empresa.com" id="sso-email"></div>
-      <div style="margin-bottom:16px"><label style="font-size:11px;font-weight:600;color:var(--text2);display:block;margin-bottom:5px">Contraseña del portal</label><input class="inp" type="password" placeholder="••••••••" id="sso-pass"></div>
+      <div style="margin-bottom:16px"><label style="font-size:11px;font-weight:600;color:var(--text2);display:block;margin-bottom:5px">ContraseÃ±a del portal</label><input class="inp" type="password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" id="sso-pass"></div>
       <button onclick="ssoConnect()" class="btn btn-primary" style="width:100%;padding:11px;font-size:13px">Autenticar y conectar</button>
       <p style="text-align:center;font-size:11px;color:var(--text3);margin-top:9px">&#128274; Cifrado AES-256-GCM</p>
     </div>
     <div id="sso-step2" style="display:none;text-align:center;padding:18px 0">
       <div style="width:48px;height:48px;border:3px solid var(--accent);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 14px"></div>
       <p style="font-size:14px;font-weight:600;margin:0 0 5px">Autenticando...</p>
-      <p style="font-size:12px;color:var(--text2);margin:0" id="sso-status">Estableciendo conexión segura</p>
+      <p style="font-size:12px;color:var(--text2);margin:0" id="sso-status">Estableciendo conexiÃ³n segura</p>
     </div>
     <div id="sso-step3" style="display:none;text-align:center;padding:18px 0">
       <div style="width:54px;height:54px;background:rgba(16,185,129,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 13px;border:2px solid rgba(16,185,129,0.4)"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg></div>
@@ -591,11 +591,25 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
 </div>
 <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 
-<!-- ══ DASHBOARD ══ -->
+<!-- â•â• DASHBOARD â•â• -->
 <div id="view-dashboard" style="display:none;height:calc(100vh - 40px)">
 <div style="display:flex;height:100%">
 <div style="width:220px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0">
-  <div style="padding:14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px"><div style="width:32px;height:32px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg></div><div><div style="font-size:13px;font-weight:700">LicitaChile</div><div style="font-size:10px;color:var(--text3)">v2.4.1 Pro</div></div></div>
+      <div style="padding:14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px">
+      <div style="width:32px;height:32px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:700">LicitaChile</div>
+        <div style="font-size:10px;color:var(--text3)">v2.4.1 Pro</div>
+      </div>
+    </div>
+    
+    <!-- Powered By -->
+    <div style="padding:16px;text-align:center;border-bottom:1px solid var(--border);">
+      <p style="font-size:10px;color:var(--text3);margin:0 0 8px;text-transform:uppercase;letter-spacing:1px;">Desarrollado por</p>
+      <img src="pulso-ai-logo.jpeg" alt="Pulso AI Logo" style="max-width:80%;border-radius:8px;box-shadow:0 4px 12px rgba(0,255,255,0.1);">
+    </div>
   <nav style="flex:1;padding:10px 0">
     <a onclick="show('dashboard')" class="nav-item active">&#9632; Dashboard</a>
     <a onclick="show('tenders')" class="nav-item">&#9632; licitapp</a>
@@ -604,19 +618,19 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
     <div style="height:1px;background:var(--border);margin:8px 14px"></div>
     <a onclick="show('portals')" class="nav-item">&#9632; Portales SSO <span style="margin-left:auto;background:rgba(239,68,68,0.2);color:#f87171;font-size:10px;padding:1px 6px;border-radius:99px">1</span></a>
   </nav>
-  <div style="padding:10px 12px;border-top:1px solid var(--border)"><div style="display:flex;align-items:center;gap:8px;padding:9px;background:var(--glass);border-radius:10px"><div style="width:30px;height:30px;background:linear-gradient(135deg,#6366f1,#a78bfa);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">MG</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600">María González</div><div style="font-size:10px;color:var(--text3)">Admin Pro</div></div></div></div>
+  <div style="padding:10px 12px;border-top:1px solid var(--border)"><div style="display:flex;align-items:center;gap:8px;padding:9px;background:var(--glass);border-radius:10px"><div style="width:30px;height:30px;background:linear-gradient(135deg,#6366f1,#a78bfa);border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">MG</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600">MarÃ­a GonzÃ¡lez</div><div style="font-size:10px;color:var(--text3)">Admin Pro</div></div></div></div>
 </div>
 <div style="flex:1;overflow-y:auto;padding:22px">
   <div style="max-width:1100px;margin:0 auto">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px"><div><h1 style="font-size:20px;font-weight:800;margin:0 0 3px">Dashboard</h1><p style="color:var(--text2);font-size:12px;margin:0">Martes 26 de Marzo 2026 · Bienvenida, María</p></div><div style="display:flex;gap:7px"><button class="btn btn-ghost" style="font-size:12px;padding:6px 12px">&#8595; Exportar</button><button class="btn btn-primary" style="font-size:12px;padding:6px 12px">&#9889; Sync</button></div></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px"><div><h1 style="font-size:20px;font-weight:800;margin:0 0 3px">Dashboard</h1><p style="color:var(--text2);font-size:12px;margin:0">Martes 26 de Marzo 2026 Â· Bienvenida, MarÃ­a</p></div><div style="display:flex;gap:7px"><button class="btn btn-ghost" style="font-size:12px;padding:6px 12px">&#8595; Exportar</button><button class="btn btn-primary" style="font-size:12px;padding:6px 12px">&#9889; Sync</button></div></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px">
       <div style="border-radius:13px;padding:16px;background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(139,92,246,0.1));border:1px solid rgba(99,102,241,0.25);cursor:pointer"><p style="font-size:10px;color:var(--text2);margin:0 0 6px;text-transform:uppercase;letter-spacing:.7px">Total licitapp</p><p style="font-size:27px;font-weight:900;margin:0;line-height:1" class="grad">48,721</p><p style="font-size:11px;color:#34d399;margin:4px 0 0">&#8593; +847 hoy</p></div>
       <div style="border-radius:13px;padding:16px;background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(52,211,153,0.05));border:1px solid rgba(16,185,129,0.2);cursor:pointer"><p style="font-size:10px;color:var(--text2);margin:0 0 6px;text-transform:uppercase;letter-spacing:.7px">Portales Activos</p><p style="font-size:27px;font-weight:900;margin:0;line-height:1" class="grad-green">5/6</p><p style="font-size:11px;color:#f87171;margin:4px 0 0">&#9888; Ariba: reauth</p></div>
-      <div style="border-radius:13px;padding:16px;background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(251,191,36,0.05));border:1px solid rgba(245,158,11,0.2);cursor:pointer"><p style="font-size:10px;color:var(--text2);margin:0 0 6px;text-transform:uppercase;letter-spacing:.7px">Cierran Pronto</p><p style="font-size:27px;font-weight:900;margin:0;line-height:1" class="grad-amber">248</p><p style="font-size:11px;color:#fbbf24;margin:4px 0 0">Próximos 7 días</p></div>
+      <div style="border-radius:13px;padding:16px;background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(251,191,36,0.05));border:1px solid rgba(245,158,11,0.2);cursor:pointer"><p style="font-size:10px;color:var(--text2);margin:0 0 6px;text-transform:uppercase;letter-spacing:.7px">Cierran Pronto</p><p style="font-size:27px;font-weight:900;margin:0;line-height:1" class="grad-amber">248</p><p style="font-size:11px;color:#fbbf24;margin:4px 0 0">PrÃ³ximos 7 dÃ­as</p></div>
       <div style="border-radius:13px;padding:16px;background:linear-gradient(135deg,rgba(168,85,247,0.1),rgba(192,132,252,0.05));border:1px solid rgba(168,85,247,0.2);cursor:pointer"><p style="font-size:10px;color:var(--text2);margin:0 0 6px;text-transform:uppercase;letter-spacing:.7px">Deduplicadas</p><p style="font-size:27px;font-weight:900;margin:0;line-height:1;background:linear-gradient(135deg,#a855f7,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent">3,284</p><p style="font-size:11px;color:#c084fc;margin:4px 0 0">6.7% del total</p></div>
     </div>
     <div style="display:grid;grid-template-columns:2fr 1fr;gap:13px;margin-bottom:13px">
-      <div class="glass" style="border-radius:13px;padding:17px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h3 style="margin:0;font-size:13px;font-weight:700">Publicaciones — 8 semanas</h3></div><canvas id="chartLine" height="125"></canvas></div>
+      <div class="glass" style="border-radius:13px;padding:17px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px"><h3 style="margin:0;font-size:13px;font-weight:700">Publicaciones â€” 8 semanas</h3></div><canvas id="chartLine" height="125"></canvas></div>
       <div class="glass" style="border-radius:13px;padding:17px"><h3 style="margin:0 0 12px;font-size:13px;font-weight:700">Por estado</h3><canvas id="chartDoughnut" height="148"></canvas></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
@@ -633,9 +647,9 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <div class="glass" style="border-radius:13px;padding:17px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:11px"><h3 style="margin:0;font-size:13px;font-weight:700">&#9888; Cierran esta semana</h3><span style="font-size:11px;background:rgba(245,158,11,0.2);color:#fbbf24;padding:2px 7px;border-radius:99px;font-weight:700">248</span></div>
         <div style="display:flex;flex-direction:column;gap:6px">
-          <div onclick="show('detail')" style="display:flex;align-items:center;gap:7px;padding:8px;background:rgba(239,68,68,0.06);border-radius:8px;cursor:pointer;border:1px solid rgba(239,68,68,0.15)"><div style="width:30px;height:30px;background:rgba(239,68,68,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#f87171;flex-shrink:0">1d</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Infraestructura Vial Ruta 5 Norte</div><div style="font-size:10px;color:var(--text3)">MOP · $4.820M CLP</div></div></div>
-          <div style="display:flex;align-items:center;gap:7px;padding:8px;background:rgba(239,68,68,0.04);border-radius:8px;cursor:pointer;border:1px solid rgba(239,68,68,0.1)"><div style="width:30px;height:30px;background:rgba(239,68,68,0.12);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#f87171;flex-shrink:0">2d</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Equipos Médicos Hospital Regional</div><div style="font-size:10px;color:var(--text3)">SICEP · $890M CLP</div></div></div>
-          <div style="display:flex;align-items:center;gap:7px;padding:8px;background:rgba(245,158,11,0.05);border-radius:8px;cursor:pointer;border:1px solid rgba(245,158,11,0.15)"><div style="width:30px;height:30px;background:rgba(245,158,11,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fbbf24;flex-shrink:0">4d</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Consultoría Transformación Digital</div><div style="font-size:10px;color:var(--text3)">ChileCompra · $320M CLP</div></div></div>
+          <div onclick="show('detail')" style="display:flex;align-items:center;gap:7px;padding:8px;background:rgba(239,68,68,0.06);border-radius:8px;cursor:pointer;border:1px solid rgba(239,68,68,0.15)"><div style="width:30px;height:30px;background:rgba(239,68,68,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#f87171;flex-shrink:0">1d</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Infraestructura Vial Ruta 5 Norte</div><div style="font-size:10px;color:var(--text3)">MOP Â· $4.820M CLP</div></div></div>
+          <div style="display:flex;align-items:center;gap:7px;padding:8px;background:rgba(239,68,68,0.04);border-radius:8px;cursor:pointer;border:1px solid rgba(239,68,68,0.1)"><div style="width:30px;height:30px;background:rgba(239,68,68,0.12);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#f87171;flex-shrink:0">2d</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Equipos MÃ©dicos Hospital Regional</div><div style="font-size:10px;color:var(--text3)">SICEP Â· $890M CLP</div></div></div>
+          <div style="display:flex;align-items:center;gap:7px;padding:8px;background:rgba(245,158,11,0.05);border-radius:8px;cursor:pointer;border:1px solid rgba(245,158,11,0.15)"><div style="width:30px;height:30px;background:rgba(245,158,11,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fbbf24;flex-shrink:0">4d</div><div style="flex:1;min-width:0"><div style="font-size:12px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">ConsultorÃ­a TransformaciÃ³n Digital</div><div style="font-size:10px;color:var(--text3)">ChileCompra Â· $320M CLP</div></div></div>
         </div>
       </div>
     </div>
@@ -644,7 +658,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
 </div>
 </div>
 
-<!-- ══ TENDERS ══ -->
+<!-- â•â• TENDERS â•â• -->
 <div id="view-tenders" style="display:none;height:calc(100vh - 40px)">
 <div style="display:flex;height:100%">
 <div style="width:220px;background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto">
@@ -665,7 +679,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <span style="padding:3px 8px;border-radius:99px;font-size:11px;font-weight:600;background:rgba(99,102,241,0.15);color:#818cf8;cursor:pointer;border:1px solid rgba(99,102,241,0.25)">Publicada</span>
     </div>
     <p style="font-size:11px;color:var(--text2);margin:0 0 5px;font-weight:600">UNSPSC</p>
-    <select class="inp" style="font-size:11px;padding:7px;margin-bottom:11px"><option>Todas</option><option>TI (4300)</option><option>Construcción (7200)</option><option>Salud (9100)</option></select>
+    <select class="inp" style="font-size:11px;padding:7px;margin-bottom:11px"><option>Todas</option><option>TI (4300)</option><option>ConstrucciÃ³n (7200)</option><option>Salud (9100)</option></select>
     <button class="btn btn-primary" style="width:100%;font-size:12px;padding:7px">Aplicar</button>
   </div>
   <nav style="flex:1;padding:8px 0">
@@ -676,47 +690,47 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
 </div>
 <div style="flex:1;display:flex;flex-direction:column;overflow:hidden">
   <div style="padding:13px 17px;border-bottom:1px solid var(--border);background:var(--bg2);flex-shrink:0">
-    <div style="position:relative;margin-bottom:8px"><svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><input class="inp" style="padding-left:32px;padding-right:86px;font-size:13px" value="construcción infraestructura vial" placeholder="Buscar licitapp..."><button class="btn btn-primary" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);padding:5px 11px;font-size:11px">Buscar</button></div>
+    <div style="position:relative;margin-bottom:8px"><svg style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3)" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg><input class="inp" style="padding-left:32px;padding-right:86px;font-size:13px" value="construcciÃ³n infraestructura vial" placeholder="Buscar licitapp..."><button class="btn btn-primary" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);padding:5px 11px;font-size:11px">Buscar</button></div>
     <div style="display:flex;align-items:center;justify-content:space-between">
-      <div style="display:flex;align-items:center;gap:7px"><span style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">42,719</strong> resultados</span><div style="display:flex;align-items:center;gap:3px"><div style="width:6px;height:6px;border-radius:50%;background:#10b981"></div><span style="font-size:11px;color:var(--text3)">Caché 11ms</span></div><span style="padding:2px 6px;border-radius:99px;font-size:10px;background:rgba(16,185,129,0.15);color:#34d399;font-weight:600">94% hit</span></div>
+      <div style="display:flex;align-items:center;gap:7px"><span style="font-size:12px;color:var(--text2)"><strong style="color:var(--text)">42,719</strong> resultados</span><div style="display:flex;align-items:center;gap:3px"><div style="width:6px;height:6px;border-radius:50%;background:#10b981"></div><span style="font-size:11px;color:var(--text3)">CachÃ© 11ms</span></div><span style="padding:2px 6px;border-radius:99px;font-size:10px;background:rgba(16,185,129,0.15);color:#34d399;font-weight:600">94% hit</span></div>
       <div style="display:flex;gap:5px"><button class="btn btn-ghost" style="font-size:11px;padding:5px 9px">&#8595; Excel</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 9px">&#8595; PDF</button></div>
     </div>
   </div>
   <div style="flex:1;overflow-y:auto;padding:13px 17px;display:flex;flex-direction:column;gap:8px">
     <div onclick="show('detail')" class="tender-card urgent">
       <div style="display:flex;gap:11px"><div style="flex:1">
-        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px"><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.25)">&#127963; ChileCompra</span><span class="badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.25)">Abierta</span><span class="badge" style="background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.25)">&#9889; Cierra 1d</span><span class="badge" style="background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.25)">7200 Construcción</span></div>
-        <h3 style="font-size:14px;font-weight:700;margin:0 0 4px;line-height:1.3">Construcción e Infraestructura Vial — Mejoramiento Ruta 5 Norte, Antofagasta</h3>
-        <p style="font-size:12px;color:var(--text2);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Licitación pública para calzadas, obras de arte y señalización en tramo km 1.204-1.248 Ruta 5 Norte, Región de Antofagasta.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text3)"><span>&#127963; MOP — Vialidad</span><span style="color:#34d399;font-weight:600">$4.820M CLP</span><span style="color:#f87171;font-weight:600">&#9201; Cierra 28/03/2026</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px"><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.25)">&#127963; ChileCompra</span><span class="badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.25)">Abierta</span><span class="badge" style="background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.25)">&#9889; Cierra 1d</span><span class="badge" style="background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.25)">7200 ConstrucciÃ³n</span></div>
+        <h3 style="font-size:14px;font-weight:700;margin:0 0 4px;line-height:1.3">ConstrucciÃ³n e Infraestructura Vial â€” Mejoramiento Ruta 5 Norte, Antofagasta</h3>
+        <p style="font-size:12px;color:var(--text2);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">LicitaciÃ³n pÃºblica para calzadas, obras de arte y seÃ±alizaciÃ³n en tramo km 1.204-1.248 Ruta 5 Norte, RegiÃ³n de Antofagasta.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text3)"><span>&#127963; MOP â€” Vialidad</span><span style="color:#34d399;font-weight:600">$4.820M CLP</span><span style="color:#f87171;font-weight:600">&#9201; Cierra 28/03/2026</span></div>
       </div><div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0"><button style="padding:5px;background:rgba(245,158,11,0.2);border:1px solid rgba(245,158,11,0.3);border-radius:6px;cursor:pointer;color:#fbbf24">&#9733;</button><button style="padding:5px;background:var(--glass);border:1px solid var(--border2);border-radius:6px;cursor:pointer;color:var(--text3)">&#8599;</button></div></div>
     </div>
     <div class="tender-card">
       <div style="display:flex;gap:11px"><div style="flex:1">
         <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px"><span class="badge" style="background:rgba(139,92,246,0.15);color:#c4b5fd;border:1px solid rgba(139,92,246,0.25)">&#128311; Wherex</span><span class="badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.25)">Abierta</span><span class="badge" style="background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.25)">4300 TI</span></div>
-        <h3 style="font-size:14px;font-weight:700;margin:0 0 4px">Plataforma Gestión Activos TI — Licencias y Mantenimiento Anual</h3>
-        <p style="font-size:12px;color:var(--text2);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">Adquisición de licencias de software para 850 usuarios en 12 sedes regionales.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text3)"><span>&#127981; ENAP — TI</span><span style="color:#34d399;font-weight:600">$980M CLP</span><span>&#9201; Cierra 15/04/2026</span></div>
+        <h3 style="font-size:14px;font-weight:700;margin:0 0 4px">Plataforma GestiÃ³n Activos TI â€” Licencias y Mantenimiento Anual</h3>
+        <p style="font-size:12px;color:var(--text2);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">AdquisiciÃ³n de licencias de software para 850 usuarios en 12 sedes regionales.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text3)"><span>&#127981; ENAP â€” TI</span><span style="color:#34d399;font-weight:600">$980M CLP</span><span>&#9201; Cierra 15/04/2026</span></div>
       </div><div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0"><button style="padding:5px;background:var(--glass);border:1px solid var(--border2);border-radius:6px;cursor:pointer;color:var(--text3)">&#9734;</button><button style="padding:5px;background:var(--glass);border:1px solid var(--border2);border-radius:6px;cursor:pointer;color:var(--text3)">&#8599;</button></div></div>
     </div>
     <div class="tender-card">
       <div style="display:flex;gap:11px"><div style="flex:1">
-        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px"><span class="badge" style="background:rgba(107,114,128,0.2);color:#9ca3af;border:1px solid rgba(107,114,128,0.3)">&#9935; Portal Minero</span><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.25)">Publicada</span><span class="badge" style="background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.25)">2000 Minería</span></div>
-        <h3 style="font-size:14px;font-weight:700;margin:0 0 4px">Suministro Equipos Perforación Diamantina — El Teniente</h3>
-        <p style="font-size:12px;color:var(--text2);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">4 equipos de perforación diamantina, capacidad mínima 1.200m, repuestos 24 meses operación continua.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px"><span class="badge" style="background:rgba(107,114,128,0.2);color:#9ca3af;border:1px solid rgba(107,114,128,0.3)">&#9935; Portal Minero</span><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.25)">Publicada</span><span class="badge" style="background:rgba(245,158,11,0.15);color:#fcd34d;border:1px solid rgba(245,158,11,0.25)">2000 MinerÃ­a</span></div>
+        <h3 style="font-size:14px;font-weight:700;margin:0 0 4px">Suministro Equipos PerforaciÃ³n Diamantina â€” El Teniente</h3>
+        <p style="font-size:12px;color:var(--text2);margin:0 0 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">4 equipos de perforaciÃ³n diamantina, capacidad mÃ­nima 1.200m, repuestos 24 meses operaciÃ³n continua.</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:var(--text3)"><span>&#9935; Codelco El Teniente</span><span style="color:#34d399;font-weight:600">$2.340M CLP</span><span>&#9201; Cierra 10/05/2026</span></div>
       </div><div style="display:flex;flex-direction:column;gap:4px;flex-shrink:0"><button style="padding:5px;background:var(--glass);border:1px solid var(--border2);border-radius:6px;cursor:pointer;color:var(--text3)">&#9734;</button><button style="padding:5px;background:var(--glass);border:1px solid var(--border2);border-radius:6px;cursor:pointer;color:var(--text3)">&#8599;</button></div></div>
     </div>
-    <div style="display:flex;justify-content:center;gap:4px;padding-top:5px"><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">&#8592; Ant.</button><button class="btn btn-primary" style="font-size:11px;padding:5px 10px">1</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">2</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">3</button><span style="padding:5px;color:var(--text3)">…</span><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">2136</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">Sig. &#8594;</button></div>
+    <div style="display:flex;justify-content:center;gap:4px;padding-top:5px"><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">&#8592; Ant.</button><button class="btn btn-primary" style="font-size:11px;padding:5px 10px">1</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">2</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">3</button><span style="padding:5px;color:var(--text3)">â€¦</span><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">2136</button><button class="btn btn-ghost" style="font-size:11px;padding:5px 10px">Sig. &#8594;</button></div>
   </div>
 </div>
 </div>
 </div>
 
-<!-- ══ ANALYTICS ══ -->
+<!-- â•â• ANALYTICS â•â• -->
 <div id="view-analytics" style="display:none;height:calc(100vh - 40px);overflow-y:auto;padding:22px">
   <div style="max-width:1100px;margin:0 auto">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><div><h1 style="font-size:20px;font-weight:800;margin:0 0 3px">Analytics</h1><p style="color:var(--text2);font-size:12px;margin:0">Inteligencia de mercado · datos en tiempo real</p></div><div style="display:flex;gap:7px"><select class="btn btn-ghost" style="font-size:12px;padding:6px 11px;cursor:pointer"><option>Últimos 30 días</option><option>90 días</option></select><button class="btn btn-primary" style="font-size:12px;padding:6px 11px">&#8595; Reporte PDF</button></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><div><h1 style="font-size:20px;font-weight:800;margin:0 0 3px">Analytics</h1><p style="color:var(--text2);font-size:12px;margin:0">Inteligencia de mercado Â· datos en tiempo real</p></div><div style="display:flex;gap:7px"><select class="btn btn-ghost" style="font-size:12px;padding:6px 11px;cursor:pointer"><option>Ãšltimos 30 dÃ­as</option><option>90 dÃ­as</option></select><button class="btn btn-primary" style="font-size:12px;padding:6px 11px">&#8595; Reporte PDF</button></div></div>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:16px">
       <div class="glass" style="border-radius:11px;padding:14px"><p style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.7px;margin:0 0 6px">Activas</p><p style="font-size:23px;font-weight:900;margin:0" class="grad">30,730</p><p style="font-size:11px;color:#34d399;margin:3px 0 0">&#8593; 12% vs mes ant.</p></div>
       <div class="glass" style="border-radius:11px;padding:14px"><p style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.7px;margin:0 0 6px">Cierran 7d</p><p style="font-size:23px;font-weight:900;margin:0;color:#fbbf24">248</p><p style="font-size:11px;color:var(--text3);margin:3px 0 0">$21.4B CLP</p></div>
@@ -724,18 +738,18 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <div class="glass" style="border-radius:11px;padding:14px"><p style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.7px;margin:0 0 6px">Dedup rate</p><p style="font-size:23px;font-weight:900;margin:0;background:linear-gradient(135deg,#a855f7,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent">6.7%</p><p style="font-size:11px;color:var(--text3);margin:3px 0 0">3,284 duplicados</p></div>
     </div>
     <div style="display:grid;grid-template-columns:3fr 2fr;gap:13px;margin-bottom:13px">
-      <div class="glass" style="border-radius:13px;padding:16px"><h3 style="margin:0 0 12px;font-size:13px;font-weight:700">Evolución temporal</h3><canvas id="chartAnalyticsTemporal" height="145"></canvas></div>
+      <div class="glass" style="border-radius:13px;padding:16px"><h3 style="margin:0 0 12px;font-size:13px;font-weight:700">EvoluciÃ³n temporal</h3><canvas id="chartAnalyticsTemporal" height="145"></canvas></div>
       <div class="glass" style="border-radius:13px;padding:16px"><h3 style="margin:0 0 12px;font-size:13px;font-weight:700">Top portales</h3><canvas id="chartPortalBar" height="145"></canvas></div>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
       <div class="glass" style="border-radius:13px;padding:16px">
-        <h3 style="margin:0 0 11px;font-size:13px;font-weight:700">Distribución UNSPSC</h3>
+        <h3 style="margin:0 0 11px;font-size:13px;font-weight:700">DistribuciÃ³n UNSPSC</h3>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#6366f1;flex-shrink:0"></div><span style="flex:1;font-size:12px">Construcción (7200)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,#6366f1,#818cf8)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">14.8k</span></div>
-          <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#10b981;flex-shrink:0"></div><span style="flex:1;font-size:12px">Tecnología TI (4300)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:63%;height:100%;background:linear-gradient(90deg,#10b981,#34d399)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">9.3k</span></div>
+          <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#6366f1;flex-shrink:0"></div><span style="flex:1;font-size:12px">ConstrucciÃ³n (7200)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:100%;height:100%;background:linear-gradient(90deg,#6366f1,#818cf8)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">14.8k</span></div>
+          <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#10b981;flex-shrink:0"></div><span style="flex:1;font-size:12px">TecnologÃ­a TI (4300)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:63%;height:100%;background:linear-gradient(90deg,#10b981,#34d399)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">9.3k</span></div>
           <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#f59e0b;flex-shrink:0"></div><span style="flex:1;font-size:12px">Salud (9100)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:49%;height:100%;background:linear-gradient(90deg,#f59e0b,#fbbf24)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">7.2k</span></div>
           <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#a855f7;flex-shrink:0"></div><span style="flex:1;font-size:12px">Transporte (7800)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:40%;height:100%;background:linear-gradient(90deg,#a855f7,#c084fc)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">5.9k</span></div>
-          <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#06b6d4;flex-shrink:0"></div><span style="flex:1;font-size:12px">Minería (5100)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:19%;height:100%;background:linear-gradient(90deg,#06b6d4,#22d3ee)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">2.8k</span></div>
+          <div style="display:flex;align-items:center;gap:7px"><div style="width:8px;height:8px;border-radius:2px;background:#06b6d4;flex-shrink:0"></div><span style="flex:1;font-size:12px">MinerÃ­a (5100)</span><div style="width:95px;height:4px;background:var(--border);border-radius:99px;overflow:hidden"><div style="width:19%;height:100%;background:linear-gradient(90deg,#06b6d4,#22d3ee)"></div></div><span style="font-size:11px;color:var(--text2);width:34px;text-align:right">2.8k</span></div>
         </div>
       </div>
       <div class="glass" style="border-radius:13px;padding:16px"><h3 style="margin:0 0 11px;font-size:13px;font-weight:700">&#9889; Top compradores</h3><canvas id="chartBuyersAnalytics" height="165"></canvas></div>
@@ -743,7 +757,7 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
   </div>
 </div>
 
-<!-- ══ DETAIL ══ -->
+<!-- â•â• DETAIL â•â• -->
 <div id="view-detail" style="display:none;height:calc(100vh - 40px);overflow-y:auto;padding:22px">
   <div style="max-width:840px;margin:0 auto">
     <div style="display:flex;align-items:center;gap:6px;margin-bottom:16px"><button onclick="show('tenders')" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2);padding:5px 10px;border-radius:7px;font-size:12px;cursor:pointer">&#8592; Volver</button><span style="color:var(--text3)">/</span><span style="font-size:12px;color:var(--text2)">licitapp</span><span style="color:var(--text3)">/</span><span style="font-size:12px;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Infra Vial Ruta 5 Norte</span></div>
@@ -751,28 +765,28 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:13px;margin-bottom:16px">
         <div style="flex:1">
           <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:9px"><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.25)">&#127963; ChileCompra</span><span class="badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.25)">Abierta</span><span class="badge" style="background:rgba(239,68,68,0.15);color:#fca5a5;border:1px solid rgba(239,68,68,0.25)">&#9889; Cierra 1d</span><span class="badge" style="background:rgba(99,102,241,0.15);color:#a5b4fc;border:1px solid rgba(99,102,241,0.25)">UNSPSC 7200</span></div>
-          <h1 style="font-size:17px;font-weight:800;margin:0 0 4px;line-height:1.3">Construcción e Infraestructura Vial — Mejoramiento Ruta 5 Norte, Tramo Antofagasta</h1>
-          <p style="font-size:11px;color:var(--text3);margin:0">ID: 2024-123456-LP18 · Publicado 18/03/2026</p>
+          <h1 style="font-size:17px;font-weight:800;margin:0 0 4px;line-height:1.3">ConstrucciÃ³n e Infraestructura Vial â€” Mejoramiento Ruta 5 Norte, Tramo Antofagasta</h1>
+          <p style="font-size:11px;color:var(--text3);margin:0">ID: 2024-123456-LP18 Â· Publicado 18/03/2026</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;flex-shrink:0"><button class="btn btn-primary" style="font-size:12px;padding:6px 13px">&#128276; Alerta</button><button style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fbbf24;padding:6px 13px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">&#9733; Guardado</button><button class="btn btn-ghost" style="font-size:12px;padding:6px 13px">&#8595; ZIP</button></div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:16px">
-        <div style="background:var(--glass);border-radius:9px;padding:13px"><p style="font-size:10px;color:var(--text3);margin:0 0 4px">Organismo</p><p style="font-size:12px;font-weight:700;margin:0">MOP — Vialidad Antofagasta</p><p style="font-size:10px;color:var(--text3);margin:2px 0 0">RUT 61.202.000-0</p></div>
-        <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:9px;padding:13px"><p style="font-size:10px;color:var(--text3);margin:0 0 4px">Presupuesto</p><p style="font-size:16px;font-weight:900;margin:0" class="grad-green">$4.820M</p><p style="font-size:10px;color:var(--text3);margin:2px 0 0">CLP · IVA incluido</p></div>
-        <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:9px;padding:13px"><p style="font-size:10px;color:var(--text3);margin:0 0 4px">Cierre</p><p style="font-size:13px;font-weight:800;margin:0;color:#f87171">28 Marzo 2026</p><p style="font-size:10px;color:#fca5a5;margin:2px 0 0;font-weight:600">&#9888; Faltan 1 día</p></div>
+        <div style="background:var(--glass);border-radius:9px;padding:13px"><p style="font-size:10px;color:var(--text3);margin:0 0 4px">Organismo</p><p style="font-size:12px;font-weight:700;margin:0">MOP â€” Vialidad Antofagasta</p><p style="font-size:10px;color:var(--text3);margin:2px 0 0">RUT 61.202.000-0</p></div>
+        <div style="background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:9px;padding:13px"><p style="font-size:10px;color:var(--text3);margin:0 0 4px">Presupuesto</p><p style="font-size:16px;font-weight:900;margin:0" class="grad-green">$4.820M</p><p style="font-size:10px;color:var(--text3);margin:2px 0 0">CLP Â· IVA incluido</p></div>
+        <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:9px;padding:13px"><p style="font-size:10px;color:var(--text3);margin:0 0 4px">Cierre</p><p style="font-size:13px;font-weight:800;margin:0;color:#f87171">28 Marzo 2026</p><p style="font-size:10px;color:#fca5a5;margin:2px 0 0;font-weight:600">&#9888; Faltan 1 dÃ­a</p></div>
       </div>
-      <div style="margin-bottom:16px"><h3 style="font-size:12px;font-weight:700;margin:0 0 6px">Descripción</h3><p style="font-size:13px;color:var(--text2);line-height:1.7;margin:0">Licitación pública para construcción de calzadas, obras de arte y señalización en el tramo km 1.204-1.248 Ruta 5 Norte, Región de Antofagasta. Incluye rellenos estructurales, drenaje longitudinal y transversal, pavimentación doble calzada con bermas y defensas camineras.</p></div>
+      <div style="margin-bottom:16px"><h3 style="font-size:12px;font-weight:700;margin:0 0 6px">DescripciÃ³n</h3><p style="font-size:13px;color:var(--text2);line-height:1.7;margin:0">LicitaciÃ³n pÃºblica para construcciÃ³n de calzadas, obras de arte y seÃ±alizaciÃ³n en el tramo km 1.204-1.248 Ruta 5 Norte, RegiÃ³n de Antofagasta. Incluye rellenos estructurales, drenaje longitudinal y transversal, pavimentaciÃ³n doble calzada con bermas y defensas camineras.</p></div>
       <div style="margin-bottom:16px">
         <h3 style="font-size:12px;font-weight:700;margin:0 0 8px">Documentos adjuntos</h3>
         <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--glass);border-radius:8px;cursor:pointer;border:1px solid var(--border)"><div style="width:30px;height:30px;background:rgba(239,68,68,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">&#128196;</div><div style="flex:1"><div style="font-size:12px;font-weight:600">Bases de Licitación.pdf</div><div style="font-size:10px;color:var(--text3)">4.2 MB</div></div><span style="font-size:12px;color:var(--accent2)">&#8595;</span></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--glass);border-radius:8px;cursor:pointer;border:1px solid var(--border)"><div style="width:30px;height:30px;background:rgba(239,68,68,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">&#128196;</div><div style="flex:1"><div style="font-size:12px;font-weight:600">Bases de LicitaciÃ³n.pdf</div><div style="font-size:10px;color:var(--text3)">4.2 MB</div></div><span style="font-size:12px;color:var(--accent2)">&#8595;</span></div>
           <div style="display:flex;align-items:center;gap:8px;padding:10px;background:var(--glass);border-radius:8px;cursor:pointer;border:1px solid var(--border)"><div style="width:30px;height:30px;background:rgba(16,185,129,0.15);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0">&#128202;</div><div style="flex:1"><div style="font-size:12px;font-weight:600">Presupuesto Referencial.xlsx</div><div style="font-size:10px;color:var(--text3)">1.8 MB</div></div><span style="font-size:12px;color:var(--accent2)">&#8595;</span></div>
         </div>
       </div>
       <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.25);border-radius:9px;padding:13px">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px"><span>&#9888;&#65039;</span><h3 style="font-size:12px;font-weight:700;margin:0;color:#fbbf24">Detectada en otros portales (deduplicación automática)</h3></div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px"><span>&#9888;&#65039;</span><h3 style="font-size:12px;font-weight:700;margin:0;color:#fbbf24">Detectada en otros portales (deduplicaciÃ³n automÃ¡tica)</h3></div>
         <div style="display:flex;flex-direction:column;gap:5px">
-          <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--glass);border-radius:7px"><span class="badge" style="background:rgba(16,185,129,0.2);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3)">SICEP</span><span style="font-size:12px;flex:1">Mejoramiento Ruta 5 Norte — Contrato Marco</span><span style="padding:2px 7px;border-radius:99px;font-size:11px;font-weight:700;background:rgba(16,185,129,0.15);color:#34d399">94%</span></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--glass);border-radius:7px"><span class="badge" style="background:rgba(16,185,129,0.2);color:#6ee7b7;border:1px solid rgba(16,185,129,0.3)">SICEP</span><span style="font-size:12px;flex:1">Mejoramiento Ruta 5 Norte â€” Contrato Marco</span><span style="padding:2px 7px;border-radius:99px;font-size:11px;font-weight:700;background:rgba(16,185,129,0.15);color:#34d399">94%</span></div>
           <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--glass);border-radius:7px"><span class="badge" style="background:rgba(245,158,11,0.2);color:#fcd34d;border:1px solid rgba(245,158,11,0.3)">Coupa</span><span style="font-size:12px;flex:1">Road Infrastructure Route 5 North Chile</span><span style="padding:2px 7px;border-radius:99px;font-size:11px;font-weight:700;background:rgba(245,158,11,0.15);color:#fbbf24">88%</span></div>
         </div>
       </div>
@@ -780,15 +794,15 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
   </div>
 </div>
 
-<!-- ══ ALERTS ══ -->
+<!-- â•â• ALERTS â•â• -->
 <div id="view-alerts" style="display:none;height:calc(100vh - 40px);overflow-y:auto;padding:22px">
   <div style="max-width:740px;margin:0 auto">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><div><h1 style="font-size:20px;font-weight:800;margin:0 0 3px">Alertas</h1><p style="color:var(--text2);font-size:12px;margin:0">Notificaciones en tiempo real · Email + Push</p></div><button class="btn btn-primary" style="font-size:12px;padding:7px 15px">+ Nueva alerta</button></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><div><h1 style="font-size:20px;font-weight:800;margin:0 0 3px">Alertas</h1><p style="color:var(--text2);font-size:12px;margin:0">Notificaciones en tiempo real Â· Email + Push</p></div><button class="btn btn-primary" style="font-size:12px;padding:7px 15px">+ Nueva alerta</button></div>
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="glass" style="border-radius:11px;padding:15px">
         <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap"><div style="width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0" class="pulse"></div>
-          <div style="flex:1"><div style="font-size:13px;font-weight:700;margin-bottom:5px">Construcción e Infraestructura Vial</div>
-            <div style="display:flex;flex-wrap:wrap;gap:4px"><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">construccion</span><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">infraestructura</span><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)">ChileCompra · SICEP</span><span class="badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.2)">≥ $500M CLP</span></div>
+          <div style="flex:1"><div style="font-size:13px;font-weight:700;margin-bottom:5px">ConstrucciÃ³n e Infraestructura Vial</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px"><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">construccion</span><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">infraestructura</span><span class="badge" style="background:rgba(59,130,246,0.15);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)">ChileCompra Â· SICEP</span><span class="badge" style="background:rgba(16,185,129,0.15);color:#6ee7b7;border:1px solid rgba(16,185,129,0.2)">â‰¥ $500M CLP</span></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;flex-shrink:0"><span style="font-size:11px;color:var(--text3)">hace 2h</span>
             <label style="position:relative;width:36px;height:20px;cursor:pointer;flex-shrink:0"><input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute"><div style="position:absolute;inset:0;background:var(--accent);border-radius:99px"></div><div style="position:absolute;top:3px;left:18px;width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,0.3)"></div></label>
@@ -798,8 +812,8 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       </div>
       <div class="glass" style="border-radius:11px;padding:15px">
         <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap"><div style="width:8px;height:8px;border-radius:50%;background:#10b981;flex-shrink:0" class="pulse"></div>
-          <div style="flex:1"><div style="font-size:13px;font-weight:700;margin-bottom:5px">Software y Tecnología Gobierno</div>
-            <div style="display:flex;flex-wrap:wrap;gap:4px"><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">software</span><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">sistema informático</span><span class="badge" style="background:rgba(139,92,246,0.15);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2)">Wherex · ChileCompra</span></div>
+          <div style="flex:1"><div style="font-size:13px;font-weight:700;margin-bottom:5px">Software y TecnologÃ­a Gobierno</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px"><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">software</span><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">sistema informÃ¡tico</span><span class="badge" style="background:rgba(139,92,246,0.15);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2)">Wherex Â· ChileCompra</span></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;flex-shrink:0"><span style="font-size:11px;color:var(--text3)">hace 4h</span>
             <label style="position:relative;width:36px;height:20px;cursor:pointer;flex-shrink:0"><input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute"><div style="position:absolute;inset:0;background:var(--accent);border-radius:99px"></div><div style="position:absolute;top:3px;left:18px;width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,0.3)"></div></label>
@@ -809,8 +823,8 @@ mark{background:rgba(251,191,36,.25);color:#fbbf24;padding:0 3px;border-radius:3
       </div>
       <div class="glass" style="border-radius:11px;padding:15px;opacity:.55">
         <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap"><div style="width:8px;height:8px;border-radius:50%;background:var(--text3);flex-shrink:0"></div>
-          <div style="flex:1"><div style="font-size:13px;font-weight:700;margin-bottom:5px">Equipos Mineros Región Norte</div>
-            <div style="display:flex;flex-wrap:wrap;gap:4px"><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">minería</span><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">Portal Minero</span></div>
+          <div style="flex:1"><div style="font-size:13px;font-weight:700;margin-bottom:5px">Equipos Mineros RegiÃ³n Norte</div>
+            <div style="display:flex;flex-wrap:wrap;gap:4px"><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">minerÃ­a</span><span class="badge" style="background:var(--glass);border:1px solid var(--border2);color:var(--text2)">Portal Minero</span></div>
           </div>
           <div style="display:flex;align-items:center;gap:6px;flex-shrink:0"><span style="font-size:11px;color:var(--text3)">Pausada</span>
             <label style="position:relative;width:36px;height:20px;cursor:pointer;flex-shrink:0"><input type="checkbox" style="opacity:0;width:0;height:0;position:absolute"><div style="position:absolute;inset:0;background:var(--border2);border-radius:99px"></div><div style="position:absolute;top:3px;left:3px;width:14px;height:14px;background:#fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,0.3)"></div></label>
@@ -858,7 +872,7 @@ function closeSSOModal(){document.getElementById('sso-modal').style.display='non
 function ssoConnect(){
   document.getElementById('sso-step1').style.display='none';
   document.getElementById('sso-step2').style.display='block';
-  const steps=['Verificando credenciales...','Obteniendo token OAuth 2.0...','Configurando sync automático...'];
+  const steps=['Verificando credenciales...','Obteniendo token OAuth 2.0...','Configurando sync automÃ¡tico...'];
   let i=0;
   const iv=setInterval(()=>{
     i++;
@@ -921,9 +935,9 @@ setInterval(()=>{
   if(!log)return;
   const t=new Date().toLocaleTimeString('es-CL');
   const msgs=[
-    `<span style="color:#34d399">[${t}]</span> <span style="color:#a78bfa">CHILECOMPRA</span> ✓ +${Math.floor(Math.random()*200+50)} nuevas`,
-    `<span style="color:#34d399">[${t}]</span> <span style="color:#818cf8">DEDUP</span> ✓ ${Math.floor(Math.random()*5+1)} duplicados detectados`,
-    `<span style="color:#94a3b8">[${t}]</span> <span style="color:#94a3b8">REDIS</span> hit rate ${(90+Math.random()*8).toFixed(1)}% · ${Math.floor(Math.random()*15+5)}ms`
+    `<span style="color:#34d399">[${t}]</span> <span style="color:#a78bfa">CHILECOMPRA</span> âœ“ +${Math.floor(Math.random()*200+50)} nuevas`,
+    `<span style="color:#34d399">[${t}]</span> <span style="color:#818cf8">DEDUP</span> âœ“ ${Math.floor(Math.random()*5+1)} duplicados detectados`,
+    `<span style="color:#94a3b8">[${t}]</span> <span style="color:#94a3b8">REDIS</span> hit rate ${(90+Math.random()*8).toFixed(1)}% Â· ${Math.floor(Math.random()*15+5)}ms`
   ];
   const div=document.createElement('div');
   div.innerHTML=msgs[Math.floor(Math.random()*msgs.length)];
@@ -935,3 +949,4 @@ document.getElementById('view-login').style.display='flex';
 </script>
 </body>
 </html>
+

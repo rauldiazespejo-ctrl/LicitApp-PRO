@@ -19,7 +19,7 @@ export default function ConnectorsPage() {
       const response = await apiClient.post(`/connectors/${source}/sync`, { type });
       return response.data;
     },
-    onSuccess: (data, vars) => {
+    onSuccess: (_, vars) => {
       toast.success(`Sync encolado para ${SOURCE_LABELS[vars.source] ?? vars.source}`);
       setTimeout(() => queryClient.invalidateQueries({ queryKey: ['sync-jobs'] }), 2000);
     },
@@ -143,3 +143,7 @@ function StatusBadge({ status }: { status: string }) {
   };
   return <span className={`px-2 py-0.5 rounded text-xs font-medium ${map[status] ?? ''}`}>{status}</span>;
 }
+
+
+
+

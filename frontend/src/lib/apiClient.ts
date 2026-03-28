@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import axios from 'axios';
 import { useAuthStore } from '@/stores/authStore';
 
@@ -38,3 +39,4 @@ apiClient.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+

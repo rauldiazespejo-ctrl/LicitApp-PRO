@@ -1,11 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { apiClient } from '../lib/apiClient';
+import { apiClient } from '../../lib/apiClient';
 import {
   BarChart, Bar, LineChart, Line, PieChart, Pie, Cell,
   XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
 import { TrendingUp, Users, AlertTriangle, Building2 } from 'lucide-react';
-import { formatCLP } from '../lib/utils';
 
 const PORTAL_COLORS: Record<string, string> = {
   CHILECOMPRA: '#3B82F6',
@@ -192,3 +191,6 @@ export default function AnalyticsDashboard() {
     </div>
   );
 }
+
+
+

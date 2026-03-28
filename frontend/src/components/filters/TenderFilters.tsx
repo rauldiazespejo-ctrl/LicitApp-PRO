@@ -1,10 +1,9 @@
 import { useTenderFilterStore } from '@/stores/tenderFilterStore';
-import { PortalSource, TenderStatus, TenderCategory } from '@licitapp/shared';
 import { X, RotateCcw } from 'lucide-react';
 
-const SOURCES = Object.values(PortalSource);
-const STATUSES = Object.values(TenderStatus);
-const CATEGORIES = Object.values(TenderCategory);
+const SOURCES = ['CHILECOMPRA', 'WHEREX', 'SAP_ARIBA', 'SICEP', 'COUPA', 'PORTAL_MINERO'];
+const STATUSES = ['PUBLISHED', 'OPEN', 'CLOSED', 'AWARDED', 'CANCELLED', 'DRAFT', 'SUSPENDED'];
+const CATEGORIES = ['CONSTRUCTION', 'TECHNOLOGY', 'SERVICES', 'SUPPLIES', 'HEALTH', 'EDUCATION', 'OTHER'];
 
 const SOURCE_LABELS: Record<string, string> = {
   CHILECOMPRA: 'ChileCompra', WHEREX: 'Wherex', SAP_ARIBA: 'SAP Ariba',
@@ -142,3 +141,4 @@ function FilterChip({ label, selected, onClick }: { label: string; selected: boo
     </button>
   );
 }
+

@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTender } from '@/hooks/useTenders';
-import { formatChileanDate, formatCurrency, PortalSource, TenderStatus } from '@licitapp/shared';
-import { ArrowLeft, ExternalLink, Calendar, DollarSign, Building2, FileText, Users, Clock } from 'lucide-react';
+import { formatCLP as formatCurrency, formatDate as formatChileanDate } from '@/lib/utils';
+import { ArrowLeft, ExternalLink, Calendar, DollarSign, Building2, FileText, Users } from 'lucide-react';
 import { Loader2 } from 'lucide-react';
 
 export default function TenderDetailPage() {
@@ -53,7 +53,7 @@ export default function TenderDetailPage() {
         <InfoCard title="Presupuesto" icon={<DollarSign className="w-5 h-5 text-green-600" />}>
           {tender.budget ? (
             <>
-              <p className="text-2xl font-bold text-green-700 dark:text-green-400">{formatCurrency(tender.budget.amount!, tender.budget.currency)}</p>
+              <p className="text-2xl font-bold text-green-700 dark:text-green-400">{formatCurrency(tender.budget.amount!)}</p>
               <p className="text-sm text-gray-500">{tender.budget.currency} {tender.budget.isEstimate ? '(estimado)' : ''}</p>
             </>
           ) : <p className="text-gray-500 text-sm">No especificado</p>}
@@ -61,10 +61,10 @@ export default function TenderDetailPage() {
 
         <InfoCard title="Fechas Clave" icon={<Calendar className="w-5 h-5 text-purple-600" />}>
           <div className="space-y-1 text-sm">
-            {tender.publishedAt && <div className="flex justify-between"><span className="text-gray-500">Publicación:</span><span className="font-medium text-gray-900 dark:text-white">{formatChileanDate(new Date(tender.publishedAt))}</span></div>}
-            {tender.openingDate && <div className="flex justify-between"><span className="text-gray-500">Apertura:</span><span className="font-medium text-gray-900 dark:text-white">{formatChileanDate(new Date(tender.openingDate))}</span></div>}
-            {tender.closingDate && <div className="flex justify-between"><span className="text-gray-500">Cierre:</span><span className="font-medium text-orange-600 dark:text-orange-400">{formatChileanDate(new Date(tender.closingDate))}</span></div>}
-            {tender.awardDate && <div className="flex justify-between"><span className="text-gray-500">Adjudicación:</span><span className="font-medium text-gray-900 dark:text-white">{formatChileanDate(new Date(tender.awardDate))}</span></div>}
+            {tender.publishedAt && <div className="flex justify-between"><span className="text-gray-500">Publicación:</span><span className="font-medium text-gray-900 dark:text-white">{formatChileanDate(tender.publishedAt as unknown as string)}</span></div>}
+            {tender.openingDate && <div className="flex justify-between"><span className="text-gray-500">Apertura:</span><span className="font-medium text-gray-900 dark:text-white">{formatChileanDate(tender.openingDate as unknown as string)}</span></div>}
+            {tender.closingDate && <div className="flex justify-between"><span className="text-gray-500">Cierre:</span><span className="font-medium text-orange-600 dark:text-orange-400">{formatChileanDate(tender.closingDate as unknown as string)}</span></div>}
+            {tender.awardDate && <div className="flex justify-between"><span className="text-gray-500">Adjudicación:</span><span className="font-medium text-gray-900 dark:text-white">{formatChileanDate(tender.awardDate as unknown as string)}</span></div>}
           </div>
         </InfoCard>
 
@@ -114,3 +114,4 @@ function InfoCard({ title, icon, children }: { title: string; icon: React.ReactN
     </div>
   );
 }
+

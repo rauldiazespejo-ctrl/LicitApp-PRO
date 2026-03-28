@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { apiClient } from '../lib/apiClient';
+import { apiClient } from '../../lib/apiClient';
 import { Clock, Trash2, Search, X } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -22,8 +22,8 @@ export function SearchHistory({ onSelect }: SearchHistoryProps) {
 
   const load = async () => {
     try {
-      const data = await apiClient.get<HistoryEntry[]>('/search-history');
-      setHistory(data);
+      const response = await apiClient.get<HistoryEntry[]>('/search-history');
+      setHistory(response.data);
     } catch {
       // silent
     } finally {
@@ -89,3 +89,6 @@ export function SearchHistory({ onSelect }: SearchHistoryProps) {
     </div>
   );
 }
+
+
+

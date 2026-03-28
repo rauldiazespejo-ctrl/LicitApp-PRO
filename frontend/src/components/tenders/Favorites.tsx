@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { apiClient } from '../lib/apiClient';
+import { apiClient } from '../../lib/apiClient';
 import { Bookmark, BookmarkCheck, Trash2, StickyNote } from 'lucide-react';
 
 interface SavedTender {
@@ -142,3 +142,4 @@ export function FavoritesList() {
     </div>
   );
 }
+
