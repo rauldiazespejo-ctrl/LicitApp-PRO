@@ -38,7 +38,7 @@ export default function ConnectorsPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {isLoading
           ? [...Array(6)].map((_, i) => <div key={i} className="h-48 bg-gray-100 dark:bg-gray-800 rounded-xl animate-pulse" />)
-          : (connectors ?? []).map((c: any) => (
+          : (Array.isArray(connectors) ? connectors : []).map((c: any) => (
               <ConnectorCard
                 key={c.source}
                 connector={c}
