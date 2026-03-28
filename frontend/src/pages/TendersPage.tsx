@@ -33,9 +33,9 @@ export default function TendersPage() {
         <div className="p-6 space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">licitapp</h1>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Licitaciones</h1>
               <p className="text-gray-500 dark:text-gray-400 mt-0.5 text-sm">
-                {data ? `${data.total.toLocaleString('es-CL')} resultados` : 'Buscando...'}
+                {data?.total !== undefined ? `${data.total.toLocaleString('es-CL')} resultados` : 'Buscando...'}
               </p>
             </div>
             <button
@@ -66,17 +66,17 @@ export default function TendersPage() {
             </div>
           )}
 
-          {!isLoading && !isError && data?.data.length === 0 && (
+          {!isLoading && data && (Array.isArray(data.data) ? data.data.length === 0 : true) && (
             <div className="text-center py-20 text-gray-500 dark:text-gray-400">
-              <p className="text-lg font-medium">No se encontraron licitapp</p>
+              <p className="text-lg font-medium">No se encontraron Licitaciones</p>
               <p className="text-sm mt-1">Intenta cambiar los filtros o términos de búsqueda</p>
             </div>
           )}
 
-          {!isLoading && data && data.data.length > 0 && (
+          {!isLoading && data && Array.isArray(data.data) && data.data.length > 0 && (
             <>
               <div className="space-y-3">
-                {data.data.map((tender) => (
+                {data.data.map((tender: any) => (
                   <TenderCard key={tender.id} tender={tender} />
                 ))}
               </div>

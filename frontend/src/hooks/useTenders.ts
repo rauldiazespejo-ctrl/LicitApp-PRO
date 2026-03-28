@@ -1,9 +1,8 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { apiClient } from '@/lib/apiClient';
-import { TenderFilter, TenderListResponse, Tender } from '@licitapp/shared';
 
-export function useTenders(filters: Partial<TenderFilter>) {
-  return useQuery<TenderListResponse>({
+export function useTenders(filters: Record<string, any>) {
+  return useQuery<any>({
     queryKey: ['tenders', filters],
     queryFn: async () => {
       const params = Object.fromEntries(
@@ -12,12 +11,12 @@ export function useTenders(filters: Partial<TenderFilter>) {
       const response = await apiClient.get('/tenders', { params });
       return response.data;
     },
-    placeholderData: (prev) => prev,
+    placeholderData: (prev: any) => prev,
   });
 }
 
 export function useTender(id: string) {
-  return useQuery<Tender>({
+  return useQuery<any>({
     queryKey: ['tenders', id],
     queryFn: async () => {
       const response = await apiClient.get(`/tenders/${id}`);

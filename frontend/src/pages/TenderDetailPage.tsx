@@ -68,9 +68,9 @@ export default function TenderDetailPage() {
           </div>
         </InfoCard>
 
-        {tender.contacts.length > 0 && (
+        {Array.isArray(tender.contacts) && tender.contacts.length > 0 && (
           <InfoCard title="Contactos" icon={<Users className="w-5 h-5 text-indigo-600" />}>
-            {tender.contacts.map((c, i) => (
+            {tender.contacts.map((c: any, i: number) => (
               <div key={i} className="text-sm space-y-0.5">
                 {c.name && <p className="font-medium text-gray-900 dark:text-white">{c.name}</p>}
                 {c.email && <p className="text-gray-500">{c.email}</p>}
@@ -81,14 +81,14 @@ export default function TenderDetailPage() {
         )}
       </div>
 
-      {tender.documents.length > 0 && (
+      {Array.isArray(tender.documents) && tender.documents.length > 0 && (
         <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
           <h2 className="flex items-center gap-2 text-base font-semibold text-gray-900 dark:text-white mb-4">
             <FileText className="w-5 h-5 text-gray-600" />
             Documentos ({tender.documents.length})
           </h2>
           <div className="space-y-2">
-            {tender.documents.map((doc) => (
+            {tender.documents.map((doc: any) => (
               <a key={doc.id} href={doc.url} target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors group">
                 <FileText className="w-4 h-4 text-gray-400 flex-shrink-0" />

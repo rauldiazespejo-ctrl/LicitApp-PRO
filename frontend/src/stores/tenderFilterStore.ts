@@ -1,5 +1,18 @@
 import { create } from 'zustand';
-import { TenderFilter } from '@licitapp/shared';
+
+interface TenderFilter {
+  page?: number;
+  limit?: number;
+  sortBy?: string;
+  sortOrder?: string;
+  search?: string;
+  sources?: string[];
+  statuses?: string[];
+  categories?: string[];
+  regions?: string[];
+  minBudget?: number;
+  maxBudget?: number;
+}
 
 interface TenderFilterState {
   filters: Partial<TenderFilter>;
