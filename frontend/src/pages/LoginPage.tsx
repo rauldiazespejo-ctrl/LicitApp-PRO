@@ -29,15 +29,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4">
       <div className="w-full max-w-md">
         <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-8">
           <div className="flex flex-col items-center mb-8">
-            <div className="p-3 bg-blue-600 rounded-2xl mb-4">
+            <div className="w-48 h-auto mb-6">
+              <img src="/pulso-ai-logo.jpeg" alt="Pulso AI" className="w-full h-auto object-contain rounded-lg" />
+            </div>
+            <div className="p-3 bg-purple-600 rounded-2xl mb-4">
               <Building2 className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">licitapp Chile</h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Sistema Unificado de licitapp</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">LicitApp Chile</h1>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Sistema Unificado de Licitaciones</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -50,7 +53,7 @@ export default function LoginPage() {
                 value={form.email}
                 onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                 placeholder="tu@empresa.cl"
               />
             </div>
@@ -65,7 +68,7 @@ export default function LoginPage() {
                   value={form.password}
                   onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))}
                   required
-                  className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                  className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                   placeholder="••••••••"
                 />
                 <button
@@ -81,7 +84,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-xl transition-colors"
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-purple-600 hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium rounded-xl transition-colors"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
               {loading ? 'Iniciando sesión...' : 'Iniciar sesión'}

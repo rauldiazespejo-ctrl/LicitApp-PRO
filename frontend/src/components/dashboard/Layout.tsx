@@ -37,9 +37,9 @@ export default function Layout() {
         <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
           {sidebarOpen && (
             <div className="flex items-center gap-2">
-              <Building2 className="w-7 h-7 text-blue-600" />
+              <Building2 className="w-7 h-7 text-purple-600" />
               <span className="font-bold text-gray-900 dark:text-white text-sm leading-tight">
-                licitapp<br />Chile
+                LicitApp<br />Chile
               </span>
             </div>
           )}
@@ -61,7 +61,7 @@ export default function Layout() {
                 className={cn(
                   'flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
                   active
-                    ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400'
+                    ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400'
                     : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white'
                 )}
               >
@@ -87,6 +87,13 @@ export default function Layout() {
             <LogOut className="w-5 h-5 flex-shrink-0" />
             {sidebarOpen && <span>Cerrar sesión</span>}
           </button>
+          
+          {sidebarOpen && (
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center">
+              <span className="text-[10px] text-gray-400 uppercase tracking-wider mb-2">Desarrollado por</span>
+              <img src="/pulso-ai-logo.jpeg" alt="Pulso AI" className="h-8 object-contain rounded opacity-80 hover:opacity-100 transition-opacity" />
+            </div>
+          )}
         </div>
       </aside>
 
