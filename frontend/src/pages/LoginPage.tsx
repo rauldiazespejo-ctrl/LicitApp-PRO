@@ -29,9 +29,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4">
-      <div className="w-full max-w-md">
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 p-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-purple-950/80 to-slate-950 p-4 relative overflow-hidden">
+      {/* Decorative blurred circles for modern AI look */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      
+      <div className="w-full max-w-md relative z-10">
+        <div className="bg-white rounded-[2rem] shadow-[0_0_50px_-12px_rgba(147,51,234,0.3)] border border-white/20 p-8 sm:p-10">
           <div className="flex flex-col items-center mb-8">
             <div className="w-48 h-auto mb-6">
               <img src="/pulso-ai-logo.jpeg" alt="Pulso AI" className="w-full h-auto object-contain rounded-lg" />
@@ -39,13 +43,13 @@ export default function LoginPage() {
             <div className="p-3 bg-purple-600 rounded-2xl mb-4">
               <Building2 className="w-8 h-8 text-white" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">LicitApp Chile</h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Sistema Unificado de Licitaciones</p>
+            <h1 className="text-2xl font-bold text-gray-900">LicitApp Chile</h1>
+            <p className="text-sm text-gray-500 mt-1">Sistema Unificado de Licitaciones</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Email
               </label>
               <input
@@ -53,13 +57,13 @@ export default function LoginPage() {
                 value={form.email}
                 onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                 placeholder="tu@empresa.cl"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Contraseña
               </label>
               <div className="relative">
@@ -68,7 +72,7 @@ export default function LoginPage() {
                   value={form.password}
                   onChange={(e) => setForm((f) => ({ ...f, password: e.target.value }))}
                   required
-                  className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
+                  className="w-full px-4 py-3 pr-12 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm"
                   placeholder="••••••••"
                 />
                 <button
