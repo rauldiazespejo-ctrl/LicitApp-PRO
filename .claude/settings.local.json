@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn --version)",
+      "Bash(npm --version)"
+    ]
+  }
+}

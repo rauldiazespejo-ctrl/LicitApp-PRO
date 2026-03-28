@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc -p packages/shared/tsconfig.json)",
+      "Bash(docker volume:*)",
+      "Bash(docker exec:*)",
+      "Bash(curl -s http://localhost:3000/health)",
+      "Bash(curl -s http://localhost:3000/api/v1/licitaciones?limit=3)",
+      "Read(//c/Users/Raul Diaz/Documents/**)",
+      "Bash(railway whoami:*)",
+      "Bash(curl -s -X POST https://backboard.railway.com/graphql/v2 -H \"Authorization: Bearer 06d3c43c-2860-497b-90b4-4bf4cd63c29c\" -H \"Content-Type: application/json\" -d '{\"\"\"\"query\"\"\"\":\"\"\"\"{ __type\\(name: \\\\\"\"\"\"ServiceInstanceUpdateInput\\\\\"\"\"\"\\) { inputFields { name type { name kind ofType { name } } } } }\"\"\"\"}')",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s -X POST https://backboard.railway.com/graphql/v2 -H \"Authorization: Bearer 06d3c43c-2860-497b-90b4-4bf4cd63c29c\" -H \"Content-Type: application/json\" -d '{\"\"\"\"query\"\"\"\":\"\"\"\"{ __type\\(name: \\\\\"\"\"\"VariableCollectionUpsertInput\\\\\"\"\"\"\\) { inputFields { name type { name kind ofType { name } } } } }\"\"\"\"}')",
+      "Bash(curl -s -X POST https://backboard.railway.com/graphql/v2 -H \"Authorization: Bearer 90832849-05d5-40b4-a88a-48e6616cc213\" -H \"Content-Type: application/json\" -d '{\"\"query\"\":\"\"{ me { name email } }\"\"}')",
+      "Read(//c/Users/Raul Diaz/.railway/**)",
+      "Read(//c/Users/Raul Diaz/AppData/Roaming/npm/**)",
+      "Bash(python3 -c \":*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''''OK'''' if d.get\\(''''data'''',{}\\).get\\(''''serviceInstanceUpdate''''\\) else str\\(d.get\\(''''errors''''\\)\\)\\)\")",
+      "Bash(TOKEN=\"06d3c43c-2860-497b-90b4-4bf4cd63c29c\" sleep 30 curl -s -X POST https://backboard.railway.com/graphql/v2 -H \"Authorization: Bearer $TOKEN\" -H \"Content-Type: application/json\" -d '{\"\"\"\"query\"\"\"\":\"\"\"\"{ project\\(id: \\\\\"\"\"\"83afe5e7-29e8-484d-b016-fa6f353af37f\\\\\"\"\"\"\\) { services { edges { node { name serviceInstances { edges { node { latestDeployment { status } } } } } } } } }\"\"\"\"}')"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Raul Diaz\\.claude\\projects\\c--Users-Raul-Diaz-Documents-ARQUITECTURA-DE-SOFTWARE-VERDENT-Integracion-Portales"
+    ]
+  }
+}

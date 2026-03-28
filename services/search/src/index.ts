@@ -169,8 +169,12 @@ function formatFacets(aggs?: Record<string, unknown>) {
 // ─── Bootstrap ────────────────────────────────────────────────────────────────
 
 async function bootstrap() {
-  await connectElasticsearch();
-  await createTendersIndex();
+  try {
+    await connectElasticsearch();
+    await createTendersIndex();
+  } catch (err) {
+    logger.warn('[SEARCH] Elasticsearch unavailable — search endpoints will return 503:', (err as Error).message);
+  }
 
   try {
     await connectRedisSearch();

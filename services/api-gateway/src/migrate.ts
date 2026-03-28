@@ -1,5 +1,6 @@
 /**
- * One-time migration: applies database/schema/init.sql if tables don't exist yet.
+ * Idempotent migration: applies database/schema/init.sql if tables don't exist.
+ * Safe to run in parallel — skips if schema already applied.
  * Run as: node --require ts-node/register/transpile-only services/api-gateway/src/migrate.ts
  */
 import { Pool } from 'pg';
@@ -14,6 +15,7 @@ async function migrate() {
     user:     process.env.POSTGRES_USER     || 'postgres',
     password: process.env.POSTGRES_PASSWORD || '',
     ssl:      process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    connectionTimeoutMillis: 10000,
   });
 
   try {
@@ -26,11 +28,25 @@ async function migrate() {
       return;
     }
 
-    console.log('[MIGRATE] Applying init.sql...');
+    console.log('[MIGRATE] Applying database schema...');
     const sqlPath = path.join(__dirname, '../../../database/schema/init.sql');
     const sql = fs.readFileSync(sqlPath, 'utf-8');
-    await pool.query(sql);
-    console.log('[MIGRATE] Schema applied successfully.');
+
+    await pool.query('BEGIN');
+    try {
+      await pool.query(sql);
+      await pool.query('COMMIT');
+      console.log('[MIGRATE] Schema applied successfully.');
+    } catch (err) {
+      await pool.query('ROLLBACK');
+      // If another process already applied it (race condition), ignore
+      const msg = (err as Error).message;
+      if (msg.includes('already exists')) {
+        console.log('[MIGRATE] Schema applied by another process, skipping.');
+      } else {
+        throw err;
+      }
+    }
   } finally {
     await pool.end();
   }
