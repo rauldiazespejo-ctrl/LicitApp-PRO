@@ -43,27 +43,27 @@ function StatCard({ title, value, icon: Icon, color }: { title: string; value: s
 export default function AnalyticsDashboard() {
   const { data: summary } = useQuery<SummaryData>({
     queryKey: ['analytics', 'summary'],
-    queryFn: () => apiClient.get('/analytics/summary'),
+    queryFn: () => apiClient.get('/analytics/summary').then(r => r.data),
   });
 
   const { data: temporal = [] } = useQuery<{ period: string; count: string }[]>({
     queryKey: ['analytics', 'temporal'],
-    queryFn: () => apiClient.get('/analytics/temporal?granularity=month'),
+    queryFn: () => apiClient.get('/analytics/temporal?granularity=month').then(r => r.data),
   });
 
   const { data: topBuyers = [] } = useQuery<{ buyer_name: string; tender_count: string; total_budget: string }[]>({
     queryKey: ['analytics', 'top-buyers'],
-    queryFn: () => apiClient.get('/analytics/top-buyers?limit=10'),
+    queryFn: () => apiClient.get('/analytics/top-buyers?limit=10').then(r => r.data),
   });
 
   const { data: unspsc = [] } = useQuery<{ unspsc_code: string; unspsc_label: string; count: string }[]>({
     queryKey: ['analytics', 'unspsc'],
-    queryFn: () => apiClient.get('/analytics/unspsc'),
+    queryFn: () => apiClient.get('/analytics/unspsc').then(r => r.data),
   });
 
   const { data: closingAlerts = [] } = useQuery<{ id: string; title: string; source: string; closing_date: string }[]>({
     queryKey: ['analytics', 'closing-alerts'],
-    queryFn: () => apiClient.get('/analytics/closing-alerts?days=7'),
+    queryFn: () => apiClient.get('/analytics/closing-alerts?days=7').then(r => r.data),
   });
 
   const temporalData = temporal.map((d) => ({

@@ -1,6 +1,9 @@
 /// <reference types="vite/client" />
 import axios from 'axios';
 import { useAuthStore } from '@/stores/authStore';
+import { mockRouter } from './mock';
+
+const DEMO_MODE = import.meta.env.VITE_DEMO_MODE !== 'false';
 
 export const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL ?? '/api/v1',
@@ -9,6 +12,19 @@ export const apiClient = axios.create({
 });
 
 apiClient.interceptors.request.use((config) => {
+  if (DEMO_MODE) {
+    config.adapter = async (cfg) => {
+      const data = await mockRouter(cfg);
+      return {
+        data,
+        status: 200,
+        statusText: 'OK',
+        headers: cfg.headers,
+        config: cfg,
+      };
+    };
+  }
+
   const { token, tenantId } = useAuthStore.getState();
   if (token) config.headers.Authorization = `Bearer ${token}`;
   if (tenantId) config.headers['X-Tenant-ID'] = tenantId;

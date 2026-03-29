@@ -1,0 +1,136 @@
+export const MOCK_TENDERS = [
+  // --- CHILECOMPRA ---
+  {
+    id: 'cc-1',
+    source: 'CHILECOMPRA',
+    status: 'OPEN',
+    title: 'Adquisición de Equipos Médicos para Hospital Regional de Antofagasta',
+    description: 'Suministro e instalación de equipos de imagenología avanzada y monitores de signos vitales para nueva ala de urgencias.',
+    buyer: { name: 'Servicio de Salud Antofagasta', rut: '61.602.000-0', region: 'Antofagasta', type: 'PUBLIC' },
+    budget: { amount: 1250000000, currency: 'CLP', isEstimate: false },
+    publishedAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: '1234-56-LP24',
+    category: 'Salud',
+    tags: ['Equipos Médicos', 'Salud Pública', 'Antofagasta'],
+    contacts: [{ name: 'Juan Pérez', email: 'jperez@ssantofagasta.cl', phone: '+56 55 223344' }],
+    documents: [{ id: 'd1', name: 'Bases Técnicas.pdf', url: '#' }, { id: 'd2', name: 'Anexo Económico.docx', url: '#' }]
+  },
+  {
+    id: 'cc-2',
+    source: 'CHILECOMPRA',
+    status: 'PUBLISHED',
+    title: 'Servicio de Mantenimiento de Áreas Verdes Municipalidad de Santiago',
+    description: 'Mantención integral de parques y plazas del sector poniente de la comuna, incluyendo riego y poda.',
+    buyer: { name: 'Ilustre Municipalidad de Santiago', rut: '69.070.100-K', region: 'Metropolitana', type: 'PUBLIC' },
+    budget: { amount: 450000000, currency: 'CLP', isEstimate: true },
+    publishedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 15 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: '2233-11-LR24',
+    category: 'Servicios',
+    tags: ['Paisajismo', 'Mantenimiento', 'Santiago'],
+    contacts: [{ name: 'María Jara', email: 'mjara@munistgo.cl' }],
+    documents: [{ id: 'd3', name: 'Bases Administrativas.pdf', url: '#' }]
+  },
+  // --- WHEREX ---
+  {
+    id: 'wx-1',
+    source: 'WHEREX',
+    status: 'OPEN',
+    title: 'Suministro de Neumáticos OTR para Camiones de Extracción Caex',
+    description: 'Contrato marco por 12 meses para suministro de neumáticos de alta resistencia para faena minera.',
+    buyer: { name: 'Codelco División Chuquicamata', rut: '61.704.000-K', region: 'Antofagasta', type: 'PUBLIC' },
+    budget: { amount: 3200000000, currency: 'CLP', isEstimate: false },
+    publishedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: 'WX-2024-001',
+    category: 'Minería',
+    tags: ['Minería', 'Insumos', 'Chuquicamata'],
+    contacts: [{ name: 'Gerente Logística', email: 'compras@codelco.cl' }],
+    documents: [{ id: 'd4', name: 'Especificaciones Técnicas.pdf', url: '#' }]
+  },
+  // --- SAP ARIBA ---
+  {
+    id: 'sa-1',
+    source: 'SAP_ARIBA',
+    status: 'PUBLISHED',
+    title: 'Servicios de Transformación Digital y Cloud Migración',
+    description: 'Implementación de arquitectura cloud multi-región y migración de servicios legacy para corporativo bancario.',
+    buyer: { name: 'Banco de Chile', rut: '97.032.000-K', region: 'Metropolitana', type: 'PRIVATE' },
+    budget: { amount: 850000000, currency: 'CLP', isEstimate: false },
+    publishedAt: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 20 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: 'ARIBA-BANK-99',
+    category: 'Tecnología',
+    tags: ['TI', 'Cloud', 'Banca'],
+    contacts: [{ name: 'Soporte Proveedores', email: 'ariba@bancochile.cl' }],
+    documents: []
+  },
+  // --- SICEP ---
+  {
+    id: 'sc-1',
+    source: 'SICEP',
+    status: 'OPEN',
+    title: 'Construcción Obras Civiles Planta Desaladora',
+    description: 'Movimiento de tierra y hormigonado para cimientos de nueva planta desaladora en región de Coquimbo.',
+    buyer: { name: 'Aguas del Valle', rut: '96.809.000-4', region: 'Coquimbo', type: 'PRIVATE' },
+    budget: { amount: 5400000000, currency: 'CLP', isEstimate: false },
+    publishedAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 4 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: 'SICEP-ADV-2024',
+    category: 'Construcción',
+    tags: ['Construcción', 'Agua', 'Infraestructura'],
+    contacts: [{ name: 'Ingeniería Proyecto', email: 'obras@aguasdelvalle.cl' }],
+    documents: [{ id: 'd5', name: 'Planos.zip', url: '#' }]
+  },
+  // --- COUPA ---
+  {
+    id: 'cp-1',
+    source: 'COUPA',
+    status: 'OPEN',
+    title: 'Servicio de Seguridad Privada para Centros de Distribución',
+    description: 'Provisión de personal de seguridad y sistemas de vigilancia para red de bodegas a nivel nacional.',
+    buyer: { name: 'Walmart Chile', rut: '76.134.941-1', region: 'Metropolitana', type: 'PRIVATE' },
+    budget: { amount: 1200000000, currency: 'CLP', isEstimate: false },
+    publishedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 6 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: 'CP-WALMART-SEC',
+    category: 'Servicios',
+    tags: ['Seguridad', 'Retail', 'Logística'],
+    contacts: [{ name: 'Adquisiciones Walmart', email: 'portal@walmart.com' }],
+    documents: []
+  },
+  // --- PORTAL MINERO ---
+  {
+    id: 'pm-1',
+    source: 'PORTAL_MINERO',
+    status: 'OPEN',
+    title: 'Mantención de Correas Transportadoras de Mineral',
+    description: 'Servicio programado de inspección y reparación de componentes de transporte pesado en planta concentradora.',
+    buyer: { name: 'Antofagasta Minerals', rut: '96.123.456-7', region: 'Atacama', type: 'PRIVATE' },
+    budget: { amount: 980000000, currency: 'CLP', isEstimate: false },
+    publishedAt: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: 'PM-AM-2024-05',
+    category: 'Minería',
+    tags: ['Minería', 'Mantenimiento', 'Atacama'],
+    contacts: [{ name: 'Gerencia Planta', email: 'compras@aminerals.cl' }],
+    documents: [{ id: 'd6', name: 'Términos de Referencia.pdf', url: '#' }]
+  },
+  // Agregando más para completar ~30 (versiones resumidas para brevedad del prompt)
+  ...Array.from({ length: 23 }, (_, i) => ({
+    id: `mock-${i}`,
+    source: ['CHILECOMPRA', 'WHEREX', 'SAP_ARIBA', 'SICEP', 'COUPA', 'PORTAL_MINERO'][i % 6],
+    status: i % 3 === 0 ? 'OPEN' : 'PUBLISHED',
+    title: `Licitación de Prueba #${i + 10} - ${['Suministro', 'Servicio', 'Consultoría', 'Obra'][i % 4]}`,
+    description: 'Esta es una licitación generada para demostración funcional del portal.',
+    buyer: { name: `Empresa Chilena ${i}`, rut: '77.777.777-7', region: 'Metropolitana', type: i % 2 === 0 ? 'PUBLIC' : 'PRIVATE' },
+    budget: { amount: 50000000 + (i * 10000000), currency: 'CLP' },
+    publishedAt: new Date(Date.now() - (i + 1) * 24 * 60 * 60 * 1000).toISOString(),
+    closingDate: new Date(Date.now() + (i + 5) * 24 * 60 * 60 * 1000).toISOString(),
+    externalId: `EXT-${i + 1000}`,
+    tags: ['Demo', 'Chile'],
+    contacts: [],
+    documents: []
+  }))
+];
